@@ -1,0 +1,6 @@
+cdp-sdk
+x402[evm,svm,fastapi]
+uvicorn
+fastapi
+yfinance
+python-dotenv

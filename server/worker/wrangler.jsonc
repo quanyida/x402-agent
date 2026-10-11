@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "x402-report",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "vars": {
+    "NETWORK": "base-sepolia",
+    "FACILITATOR_URL": "https://x402.org/facilitator"
+    // PAY_TO 可选：默认使用内置收款地址 0x6D8F5690D773c68b566CA04F6a63F69740166a39
+    // 如需改收款钱包：取消注释下行
+    // "PAY_TO": "0x6D8F5690D773c68b566CA04F6a63F69740166a39"
+  }
+}

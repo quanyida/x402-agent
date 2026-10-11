@@ -1,0 +1,35 @@
+# ---- 私钥与凭证（绝不提交）----
+.env
+*.key
+*.pem
+*.json.enc
+svm_keypair.json
+.svm_keypair.json
+**/svm_keypair.json
+
+# ---- 临时文件 / 日志 ----
+_*.log
+_*.txt
+_*.json
+*.log
+*.tmp
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+
+# ---- Cloudflare Worker 本地状态 ----
+.wrangler/
+dist/
+.dev.vars
+
+# ---- 编辑器 ----
+.vscode/
+.idea/

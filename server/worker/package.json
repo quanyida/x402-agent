@@ -1,0 +1,21 @@
+{
+  "name": "x402-report-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "x402 收费行情报告服务 - Cloudflare Worker 版（Hono + x402-hono）",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "x402-hono": "^1.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
+    "typescript": "^5.6.0",
+    "wrangler": "^4.149.0"
+  }
+}
