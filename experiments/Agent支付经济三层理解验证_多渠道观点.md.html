@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent支付经济理解验证对照图</title>
+<style>
+  body{margin:0;background:#f7f9fc;color:#1a1a2e;font-family:-apple-system,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:20px 16px;}
+  .title{font-size:20px;font-weight:700;margin-bottom:4px;}
+  .sub{font-size:13px;color:#667;margin-bottom:18px;}
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin-bottom:12px;}
+  .card h3{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:15px;margin:0;}
+  .tag{font-size:12px;padding:2px 8px;border-radius:10px;}
+  .tag-warn{background:#fef3c7;color:#92400e;}
+  .tag-ok{background:#dcfce7;color:#166534;}
+  .tag-info{background:#dbeafe;color:#1e40af;}
+  .body{font-size:13.5px;margin-top:8px;line-height:1.6;}
+  .hl-y{background:#fde68a;padding:0 4px;}
+  .hl-r{background:#fee2e2;padding:0 4px;}
+  .hl-g{background:#dcfce7;padding:0 4px;}
+  .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px;}
+  .step{color:#fff;padding:4px 10px;border-radius:6px;}
+  .s1{background:#22c55e;}.s2{background:#3b82f6;}.s3{background:#f59e0b;}
+  .arrow{color:#999;}
+  .note{font-size:12.5px;color:#667;margin-top:8px;line-height:1.5;}
+  .src{font-size:11.5px;color:#889;margin-top:14px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">AI Agent 支付经济 · 三层理解验证</div>
+  <div class="sub">渠道：Perplexity / Google AI Mode / X Grok ｜ 结论：方向正确，三处需修正</div>
+
+  <div class="card" style="border-left:5px solid #f59e0b;">
+    <h3>① 支付协议是基础，x402 是趋势 <span class="tag tag-warn">⚠ 方向对 · 措辞过强</span></h3>
+    <div class="body">
+      <b>你的理解：</b>x402 = Agent 支付经济的基础层，趋势已定<br>
+      <b>渠道修正：</b>x402 是 <span class="hl-y">强候选/基础层之一</span>，<span class="hl-r">尚未成为既定标准</span>；它只是"支付请求 + 签名证明"格式，不含钱包托管、不含跨链结算；Stripe MPP、Google AP2 是竞争路线
+    </div>
+  </div>
+
+  <div class="card" style="border-left:5px solid #22c55e;">
+    <h3>② Agent 钱包/私钥基本走 MPC <span class="tag tag-ok">✅ 大体正确 · 需补一层</span></h3>
+    <div class="body">
+      <b>你的理解：</b>CDP、NEAR MPC 都成熟，密钥管理就靠 MPC<br>
+      <b>渠道修正：</b>MPC 是主流密钥路线 <span class="hl-g">之一</span>（CDP 托管式 / NEAR chain-signature 式）；但 MPC 只防"密钥泄露"，<span class="hl-r">不防"已授权 Agent 乱花钱"</span>——spending policy / 限额 / 白名单 / 智能账户授权层才是关键
+    </div>
+  </div>
+
+  <div class="card" style="border-left:5px solid #3b82f6;">
+    <h3>③ Buyer/Seller 跨链 → 桥 或 NEAR 方案 <span class="tag tag-info">✅ 正确 · 需补一条</span></h3>
+    <div class="body">
+      <b>你的理解：</b>跨链桥兑换后付款，或直接用 NEAR 链抽象<br>
+      <b>渠道修正：</b>两条路线确实成立：<b style="color:#1d4ed8;">桥 = 资产层方案</b>（迁移资产再付）；<b style="color:#1d4ed8;">NEAR = 意图协调层方案</b>（链签名 + solver）。但 NEAR 链抽象 <span class="hl-r">底层仍依赖桥</span>（verifier ledger + 外部链提款走 token bridge）；同链直连永远优先
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;margin-bottom:8px;">跨链付款选型优先级（Perplexity 引 docs 的建议）</div>
+    <div class="flow">
+      <span class="step s1">1. 同链直连</span><span class="arrow">→</span>
+      <span class="step s2">2. 桥 / 资产迁移</span><span class="arrow">→</span>
+      <span class="step s3">3. NEAR Intents 意图结算</span>
+    </div>
+    <div class="note">NEAR Intents 适用：多链、结果导向、不想手动选桥/路径时；代价是依赖 solver 可用性与报价质量 + verifier/withdrawal 机制</div>
+  </div>
+
+  <div class="src">数据口径：观点来自 multi-channel-opinion-agent 采集的 Perplexity（引 cloudflare/circle/near 官方 docs）、Google AI Mode 引用源（PANews/掘金/Binance）、X Grok 既有对话（NEAR 深度分析）。非投资建议。</div>
+</div>
+</body>
+</html>
