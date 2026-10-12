@@ -2,12 +2,9 @@
 
 把 NEAR 账户变成 x402（HTTP 付费协议）的买家：**NEAR 链签名（MPC）+ 1Click 自动注资 → EVM 链 USDC 付款**。
 
-## 文件
-
-| 文件 | 说明 |
-|---|---|
-| `near_signer.py` | NEAR 签名器（官方 py-near SDK）：MPC 链签名、EIP-712 typed-data 签名（digest 修复版）、1Click 自动注资、派生 EVM 地址 |
-| `x402_bazaar.py` | x402 客户端：registry 发现 + 402 自动付款；新增 `--signer near` 模式（CDP 默认路径保留） |
+> **代码位置**：完整脚本在 `skills/x402-bazaar-client/scripts/`（本 skill 的唯一代码源，与本地生效的 skill 同步）：
+> - `near_signer.py` — NEAR 签名器（官方 py-near SDK）：MPC 链签名、EIP-712 typed-data 签名（digest 修复版）、1Click 自动注资、派生 EVM 地址
+> - `x402_bazaar.py` — x402 客户端：registry 发现 + 402 自动付款；新增 `--signer near` 模式（CDP 默认路径保留）
 
 ## 依赖
 
@@ -28,6 +25,8 @@ CDP_WALLET_SECRET=...
 ## 用法
 
 ```bash
+cd skills/x402-bazaar-client/scripts
+
 # 列主网服务
 python x402_bazaar.py list --mainnet --limit 40
 
