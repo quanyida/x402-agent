@@ -61,17 +61,114 @@ console.log(
 const PAY_TO_EVM = "0x3e9e790e4b54e1e885da833a45041021fc027394";
 
 // ---- symbol 白名单（防滥用：只允许已知美股/加密代码）----
-const ALLOWED_SYMBOLS = new Set([
-  // 美股（示例子集）
+const STOCK_SYMBOLS = new Set([
   "NVDA", "AAOI", "AXTI", "MARA", "RIOT", "COIN", "HOOD", "TSLA",
   "AAPL", "MSFT", "AMZN", "GOOGL", "META", "NFLX", "AMD", "INTC",
-  // 加密
+]);
+const CRYPTO_SYMBOLS = new Set([
   "BTC", "ETH", "SOL", "NEAR", "TAO", "USDC", "USDT", "BNB", "XRP",
   "DOGE", "ADA", "AVAX", "LINK", "DOT", "MATIC", "ARB", "OP",
 ]);
+const ALLOWED_SYMBOLS = new Set([...STOCK_SYMBOLS, ...CRYPTO_SYMBOLS]);
 
 function isValidSymbol(s: string): boolean {
   return ALLOWED_SYMBOLS.has(s);
+}
+
+// ---- 数据源：CoinGecko coin id 映射（加密）----
+const COIN_IDS: Record<string, string> = {
+  BTC: "bitcoin", ETH: "ethereum", SOL: "solana", NEAR: "near",
+  TAO: "bittensor", USDC: "usd-coin", USDT: "tether", BNB: "binancecoin",
+  XRP: "ripple", DOGE: "dogecoin", ADA: "cardano", AVAX: "avalanche-2",
+  LINK: "chainlink", DOT: "polkadot", MATIC: "matic-network", ARB: "arbitrum",
+  OP: "optimism",
+};
+
+// ---- 行情抓取（Worker 侧直连，无需本地代理）----
+const FETCH_TIMEOUT_MS = 10_000;
+
+async function fetchJson(url: string): Promise<unknown | null> {
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (x402-report-worker)" },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+// 加密批量行情：一次拉全部白名单币（CoinGecko 免费档限流 ~30/min，批量+缓存规避）
+let cryptoQuotesCache: { at: number; data: Record<string, { usd?: number; usd_24h_change?: number | null }> } | null = null;
+const CRYPTO_CACHE_TTL_MS = 30_000;
+
+async function fetchCryptoQuotes(): Promise<Record<string, { usd?: number; usd_24h_change?: number | null }>> {
+  const now = Date.now();
+  if (cryptoQuotesCache && now - cryptoQuotesCache.at < CRYPTO_CACHE_TTL_MS) {
+    return cryptoQuotesCache.data;
+  }
+  const ids = [...CRYPTO_SYMBOLS].map((s) => COIN_IDS[s]).join(",");
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`;
+  const data = (await fetchJson(url)) as Record<string, { usd?: number; usd_24h_change?: number | null }> | null;
+  if (data) {
+    cryptoQuotesCache = { at: now, data };
+  } else if (cryptoQuotesCache) {
+    // 拉取失败回退到旧批量缓存（stale）
+    return cryptoQuotesCache.data;
+  }
+  return data ?? {};
+}
+
+// 美股单票行情：Yahoo Finance chart API（免费无 key）
+async function fetchStockQuote(symbol: string) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=5d`;
+  const data = (await fetchJson(url)) as {
+    chart?: { result?: Array<{ meta?: Record<string, unknown> }> };
+  } | null;
+  const meta = data?.chart?.result?.[0]?.meta;
+  if (!meta || typeof meta.regularMarketPrice !== "number") return null;
+  return {
+    price: meta.regularMarketPrice as number,
+    change_24h_pct: typeof meta.regularMarketChangePercent === "number" ? (meta.regularMarketChangePercent as number) : null,
+    name: (meta.longName as string) ?? (meta.shortName as string) ?? symbol,
+    currency: (meta.currency as string) ?? "USD",
+    high_52w: typeof meta.fiftyTwoWeekHigh === "number" ? (meta.fiftyTwoWeekHigh as number) : null,
+    low_52w: typeof meta.fiftyTwoWeekLow === "number" ? (meta.fiftyTwoWeekLow as number) : null,
+  };
+}
+
+async function buildQuote(symbol: string) {
+  if (STOCK_SYMBOLS.has(symbol)) {
+    const q = await fetchStockQuote(symbol);
+    if (!q) return null;
+    return {
+      symbol,
+      type: "stock",
+      name: q.name,
+      price: q.price,
+      change_24h_pct: q.change_24h_pct,
+      currency: q.currency,
+      high_52w: q.high_52w,
+      low_52w: q.low_52w,
+      source: "Yahoo Finance (query1.finance.yahoo.com)",
+    };
+  }
+  const quotes = await fetchCryptoQuotes();
+  const item = quotes[COIN_IDS[symbol]];
+  if (!item || typeof item.usd !== "number") return null;
+  return {
+    symbol,
+    type: "crypto",
+    name: symbol,
+    price: item.usd,
+    change_24h_pct: typeof item.usd_24h_change === "number" ? item.usd_24h_change : null,
+    currency: "USD",
+    high_52w: null,
+    low_52w: null,
+    source: "CoinGecko (api.coingecko.com)",
+  };
 }
 
 // ---- 简易缓存（同 symbol 60 秒内返回相同结果，不重复计费）----
@@ -120,10 +217,15 @@ const routes = {
         output: {
           example: {
             symbol: "NVDA",
-            price: 138.42,
-            change_24h_pct: 1.23,
-            note: "价格来源：CoinGecko 免费公开接口",
-            generated_at: "2026-10-12T08:00:00.000Z",
+            type: "stock",
+            name: "NVIDIA Corporation",
+            price: 229.28,
+            change_24h_pct: -0.52,
+            currency: "USD",
+            high_52w: 243.37,
+            low_52w: 164.27,
+            source: "Yahoo Finance",
+            generated_at: "2026-10-12T09:00:00.000Z",
           },
         },
       }),
@@ -202,39 +304,20 @@ app.get("/report/:symbol", async (c) => {
   const cached = getCached(symbol);
   if (cached !== undefined) return c.json(cached);
 
-  const report = {
+  const quote = await buildQuote(symbol);
+  const report = quote ?? {
     symbol,
-    price: null as number | null,
-    change_24h_pct: null as number | null,
-    note: "行情数据源待接入（当前为占位报告）。后续可接自有 Python 后端 / 币安 / CoinGecko / Alpha Vantage。",
+    type: STOCK_SYMBOLS.has(symbol) ? "stock" : "crypto",
+    name: symbol,
+    price: null,
+    change_24h_pct: null,
+    currency: "USD",
+    high_52w: null,
+    low_52w: null,
+    source: null,
+    error: "行情数据源暂不可用（Yahoo Finance / CoinGecko 超时或限流），请稍后重试",
     generated_at: new Date().toISOString(),
   };
-
-  if (["BTC", "ETH", "SOL", "NEAR", "TAO", "USDC", "USDT", "BNB", "XRP", "DOGE", "ADA", "AVAX", "LINK", "DOT", "ARB", "OP"].includes(symbol)) {
-    const coinId: Record<string, string> = {
-      BTC: "bitcoin", ETH: "ethereum", SOL: "solana", NEAR: "near",
-      TAO: "bittensor", USDC: "usd-coin", USDT: "tether", BNB: "binancecoin",
-      XRP: "ripple", DOGE: "dogecoin", ADA: "cardano", AVAX: "avalanche-2",
-      LINK: "chainlink", DOT: "polkadot", ARB: "arbitrum", OP: "optimism",
-    };
-    try {
-      const r = await fetch(
-        `https://api.coingecko.com/api/v3/simple/price?ids=${coinId[symbol]}&vs_currencies=usd&include_24hr_change=true`,
-        { headers: { "User-Agent": "x402-report-worker" } },
-      );
-      if (r.ok) {
-        const data = (await r.json()) as Record<string, { usd?: number; usd_24h_change?: number }>;
-        const item = data[coinId[symbol]];
-        if (item) {
-          report.price = item.usd ?? null;
-          report.change_24h_pct = item.usd_24h_change ?? null;
-          report.note = "价格来源：CoinGecko 免费公开接口";
-        }
-      }
-    } catch {
-      // 保持占位报告
-    }
-  }
 
   setCached(symbol, report);
   return c.json(report);
