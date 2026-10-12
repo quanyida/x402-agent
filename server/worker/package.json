@@ -1,8 +1,8 @@
 {
   "name": "x402-report-worker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "x402 收费行情报告服务 - Cloudflare Worker 版（Hono + x402-hono）",
+  "description": "x402 收费行情报告服务 - Cloudflare Worker 版（Hono + x402 v2 + CDP Facilitator）",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
@@ -10,8 +10,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "hono": "^4.6.0",
-    "x402-hono": "^1.2.0"
+    "@coinbase/cdp-sdk": "^1.57.1",
+    "@x402/core": "^2.28.0",
+    "@x402/evm": "^2.28.0",
+    "@x402/extensions": "^2.28.0",
+    "@x402/hono": "^2.28.0",
+    "@x402/svm": "^2.28.0",
+    "hono": "^4.6.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20261006.1",

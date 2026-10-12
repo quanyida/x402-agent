@@ -3,12 +3,10 @@
   "name": "x402-report",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "vars": {
-    "NETWORK": "base-sepolia",
-    "FACILITATOR_URL": "https://x402.org/facilitator"
-    // PAY_TO 可选：默认使用内置收款地址 0x6D8F5690D773c68b566CA04F6a63F69740166a39
-    // 如需改收款钱包：取消注释下行
-    // "PAY_TO": "0x6D8F5690D773c68b566CA04F6a63F69740166a39"
+    // 收款地址固定为 NEAR 派生 Base 地址（代码内常量，无需环境变量）
+    // CDP API key 通过 wrangler secret 注入：CDP_API_KEY_ID / CDP_API_KEY_SECRET
   }
 }

@@ -1,70 +1,126 @@
 /**
- * x402 收费行情报告服务 — Cloudflare Worker 版
+ * x402 收费行情报告服务 — Cloudflare Worker 版（x402 v2 + CDP Facilitator）
  *
- * 路由: GET /report/:symbol  → $0.01/次（exact scheme，Base Sepolia）
- * 结算: 经 x402.org facilitator（免费测试网 facilitator，无需 API key）
- * 收款: x402-report-receiver (0x6D8F5690D773c68b566CA04F6a63F69740166a39)
+ * 路由: GET /report/:symbol  → $0.001/次（exact scheme，Base 主网）
+ * 结算: CDP Facilitator（https://api.cdp.coinbase.com/platform/v2/x402）
+ * 收款: NEAR 派生 Base 地址（用户确认）
+ *       0x3e9e790e4b54e1e885da833a45041021fc027394
  *
- * 部署: wrangler deploy
+ * 部署: wrangler deploy（需 CDP_API_KEY_ID / CDP_API_KEY_SECRET 环境变量）
  * 验证: curl -i https://<worker>.workers.dev/report/NVDA  → 402 + PAYMENT-REQUIRED
  */
 import { Hono } from "hono";
-import { paymentMiddleware } from "x402-hono";
+import { createX402Server } from "@coinbase/cdp-sdk/x402";
+import { paymentMiddlewareFromHTTPServer } from "@x402/hono";
 
-interface Env {
-  PAY_TO?: string; // 收款钱包地址（默认用内置测试地址）
-  NETWORK?: string; // 默认 base-sepolia
-  FACILITATOR_URL?: string; // 默认 https://x402.org/facilitator
+// ---- 收款地址（用户确认的 NEAR 派生 Base 地址）----
+const PAY_TO_EVM = "0x3e9e790e4b54e1e885da833a45041021fc027394";
+
+// ---- symbol 白名单（防滥用：只允许已知美股/加密代码）----
+const ALLOWED_SYMBOLS = new Set([
+  // 美股（示例子集）
+  "NVDA", "AAOI", "AXTI", "MARA", "RIOT", "COIN", "HOOD", "TSLA",
+  "AAPL", "MSFT", "AMZN", "GOOGL", "META", "NFLX", "AMD", "INTC",
+  // 加密
+  "BTC", "ETH", "SOL", "NEAR", "TAO", "USDC", "USDT", "BNB", "XRP",
+  "DOGE", "ADA", "AVAX", "LINK", "DOT", "MATIC", "ARB", "OP",
+]);
+
+function isValidSymbol(s: string): boolean {
+  return ALLOWED_SYMBOLS.has(s);
 }
 
-const DEFAULT_PAY_TO = "0x6D8F5690D773c68b566CA04F6a63F69740166a39"; // x402-report-receiver
-const DEFAULT_NETWORK = "base-sepolia";
-const DEFAULT_FACILITATOR = "https://x402.org/facilitator";
+// ---- 简易缓存（同 symbol 60 秒内返回相同结果，不重复计费）----
+const cache = new Map<string, { at: number; body: unknown }>();
+const CACHE_TTL_MS = 60_000;
 
-const app = new Hono<{ Bindings: Env }>();
+function getCached(symbol: string): unknown | undefined {
+  const hit = cache.get(symbol);
+  if (hit && Date.now() - hit.at < CACHE_TTL_MS) return hit.body;
+  return undefined;
+}
 
-// 动态构造 paymentMiddleware（读取 wrangler vars，方便切主网/换钱包）
-app.use(async (c, next) => {
-  const payTo = (c.env.PAY_TO || DEFAULT_PAY_TO) as `0x${string}`;
-  const network = (c.env.NETWORK || DEFAULT_NETWORK) as
-    | "base"
-    | "base-sepolia"
-    | "polygon"
-    | "solana"
-    | "solana-devnet";
-  const facilitatorUrl = (c.env.FACILITATOR_URL ||
-    DEFAULT_FACILITATOR) as `${string}://${string}`;
+function setCached(symbol: string, body: unknown): void {
+  cache.set(symbol, { at: Date.now(), body });
+  if (cache.size > 500) {
+    // 简单清理
+    for (const [k, v] of cache) {
+      if (Date.now() - v.at > CACHE_TTL_MS) cache.delete(k);
+    }
+  }
+}
 
-  const mw = paymentMiddleware(
-    payTo,
-    {
-      "/report/*": {
-        price: "$0.01",
-        network,
-        config: {
-          description:
-            "行情快照与观点摘要报告：输入美股/加密代码，返回价格、涨跌及简要市场观点（$0.01/次）",
-        },
-      },
+// ---- 创建 x402 服务器（生产环境 = Base 主网；收款地址显式指定）----
+const server = await createX402Server({
+  environment: "production",
+  payToConfig: { type: "address", evm: PAY_TO_EVM },
+  builderCode: "x402_report", // 链上归属代码（可选）
+  routes: {
+    "GET /report/:symbol": {
+      price: "$0.001",
+      scheme: "exact",
+      description: "行情快照与观点摘要：输入美股/加密代码，返回价格、涨跌及简要观点（$0.001/次，Base 主网 USDC）",
     },
-    { url: facilitatorUrl },
-  );
-  return mw(c, next);
+  },
 });
+
+const app = new Hono();
+
+// x402 支付中间件（必须在受保护路由之前注册）
+app.use(paymentMiddlewareFromHTTPServer(server));
 
 app.get("/health", (c) => c.json({ status: "ok" }));
 
 app.get("/report/:symbol", async (c) => {
   const symbol = c.req.param("symbol").toUpperCase();
 
-  // 简化版报告（Worker 无 Python 行情源）：
-  // 完整版可在此调用外部行情 API（如自有 Python 后端 / Alpha Vantage / Binance 等）
+  if (!isValidSymbol(symbol)) {
+    return c.json(
+      { error: `unsupported symbol '${symbol}'; allowed: ${[...ALLOWED_SYMBOLS].join(", ")}` },
+      400,
+    );
+  }
+
+  // 命中缓存则不重新生成（已付款的调用结果可复用，避免重复计费场景）
+  const cached = getCached(symbol);
+  if (cached !== undefined) return c.json(cached);
+
   const report = {
     symbol,
-    note: "x402 Worker 版简化报告。完整行情+观点版见本地 FastAPI 服务。",
+    price: null as number | null,
+    change_24h_pct: null as number | null,
+    note: "行情数据源待接入（当前为占位报告）。后续可接自有 Python 后端 / 币安 / CoinGecko / Alpha Vantage。",
     generated_at: new Date().toISOString(),
   };
 
+  // 尝试从 CoinGecko 免费接口获取加密币价（尽力而为，失败则返回占位报告）
+  if (["BTC", "ETH", "SOL", "NEAR", "TAO", "USDC", "USDT", "BNB", "XRP", "DOGE", "ADA", "AVAX", "LINK", "DOT", "ARB", "OP"].includes(symbol)) {
+    const coinId: Record<string, string> = {
+      BTC: "bitcoin", ETH: "ethereum", SOL: "solana", NEAR: "near",
+      TAO: "bittensor", USDC: "usd-coin", USDT: "tether", BNB: "binancecoin",
+      XRP: "ripple", DOGE: "dogecoin", ADA: "cardano", AVAX: "avalanche-2",
+      LINK: "chainlink", DOT: "polkadot", ARB: "arbitrum", OP: "optimism",
+    };
+    try {
+      const r = await fetch(
+        `https://api.coingecko.com/api/v3/simple/price?ids=${coinId[symbol]}&vs_currencies=usd&include_24hr_change=true`,
+        { headers: { "User-Agent": "x402-report-worker" } },
+      );
+      if (r.ok) {
+        const data = (await r.json()) as Record<string, { usd?: number; usd_24h_change?: number }>;
+        const item = data[coinId[symbol]];
+        if (item) {
+          report.price = item.usd ?? null;
+          report.change_24h_pct = item.usd_24h_change ?? null;
+          report.note = "价格来源：CoinGecko 免费公开接口";
+        }
+      }
+    } catch {
+      // 保持占位报告
+    }
+  }
+
+  setCached(symbol, report);
   return c.json(report);
 });
 
