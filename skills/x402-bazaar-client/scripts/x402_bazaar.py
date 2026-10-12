@@ -551,18 +551,28 @@ def cmd_my_wallet(args: argparse.Namespace | None = None) -> None:
 # ------------------------------------------------------------------- main ---
 
 def _near_from_args(args: argparse.Namespace) -> dict | None:
-    """Extract NEAR signer config from CLI args (None unless --signer near)."""
+    """Extract NEAR signer config (None unless --signer near).
+
+    Precedence: CLI args > NEAR_ACCOUNT_ID / NEAR_PRIVATE_KEY env (.env).
+    This lets users configure once in .env and run --signer near without flags.
+    """
     if getattr(args, "signer", "cdp") != "near":
         return None
     key = getattr(args, "near_key", None)
     if not key and getattr(args, "near_key_file", None):
         with open(args.near_key_file, "r", encoding="utf-8") as f:
             key = f.read().strip()
+    account = getattr(args, "near_account", None) or os.environ.get("NEAR_ACCOUNT_ID")
+    if not key:
+        key = os.environ.get("NEAR_PRIVATE_KEY")
+    if key and ":" not in key and key.startswith("ed25519"):
+        # tolerate env values missing the ed25519: prefix
+        key = f"ed25519:{key}"
     return {
-        "account": getattr(args, "near_account", None),
+        "account": account,
         "key": key,
         "path": getattr(args, "near_path", "ethereum-1"),
-        "rpc": getattr(args, "near_rpc", None),
+        "rpc": getattr(args, "near_rpc", None) or os.environ.get("NEAR_RPC_URL"),
     }
 
 

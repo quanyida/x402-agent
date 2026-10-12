@@ -1,0 +1,9 @@
+# x402-bazaar-client dependencies (Python >= 3.10)
+# NEAR signer mode (recommended):
+py-near>=3.0.0
+python-dotenv>=1.0.0
+httpx>=0.27.0
+# x402 payment client:
+x402[evm,svm,httpx]>=0.1.0
+# CDP mode (optional — only if you pay with a Coinbase CDP wallet):
+cdp-sdk>=0.16.0
