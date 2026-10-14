@@ -302,7 +302,9 @@ class NearChainSigner:
         args = {
             "request": {"payload_v2": {"Ecdsa": payload_hex}, "path": self.path, "domain_id": 0}
         }
-        gas = 300_000_000_000_000  # 300 TGas (chainsig.js constant) — MPC awaits external service
+        gas = 100_000_000_000_000  # 100 TGas: RPC pre-checks balance >= gas_limit*gas_price;
+                                   # gas price spiked so 300 TGas now costs ~300 NEAR est. and
+                                   # small accounts get rejected. Actual MPC sign uses tens of TGas.
         deposit = 1                 # 1 yoctoNEAR (chainsig.js)
         res = self._acct.function_call_sync(self.mpc, "sign", args, gas, deposit)
         sig = self._parse_signature(res)

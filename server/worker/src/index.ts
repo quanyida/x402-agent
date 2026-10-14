@@ -190,7 +190,9 @@ function setCached(symbol: string, body: unknown): void {
   }
 }
 
-// ---- x402 路由配置（exact scheme，Base 主网，$0.001/次）----
+// ---- x402 路由配置（exact scheme，Base 主网）----
+// /report/:symbol  $0.001/次 行情快照
+// /smartmoney-brief $0.05/次 聪明钱每日简报完整版（内容存于 KV SMARTMONEY_BRIEF）
 const routes = {
   "GET /report/:symbol": {
     accepts: {
@@ -199,8 +201,10 @@ const routes = {
       price: "$0.001",
       network: "eip155:8453" as const,
     },
+    serviceName: "Market Quote Snapshot",
+    tags: ["stock", "crypto", "market-data", "quote", "price"],
     description:
-      "行情快照与观点摘要：输入美股/加密代码，返回价格、涨跌及简要观点（$0.001/次，Base 主网 USDC）",
+      "Real-time US stock & crypto price snapshots with 24h change, 52-week highs/lows and data source. Use when an agent needs current market prices for a whitelisted symbol such as NVDA, BTC or NEAR. Pay $0.001 USDC per call on Base mainnet.",
     extensions: {
       ...declareDiscoveryExtension({
         pathParams: { symbol: "NVDA" },
@@ -209,7 +213,8 @@ const routes = {
           properties: {
             symbol: {
               type: "string",
-              description: "美股或加密货币代码（NVDA / BTC / NEAR 等）",
+              description:
+                "Stock or crypto ticker symbol from the whitelist (e.g. NVDA, AAOI, BTC, ETH, SOL, NEAR, TAO). Use /report/:symbol with the uppercase symbol.",
             },
           },
           required: ["symbol"],
@@ -231,10 +236,38 @@ const routes = {
       }),
     },
   },
+  "GET /smartmoney-brief": {
+    accepts: {
+      scheme: "exact",
+      payTo: PAY_TO_EVM,
+      price: "$0.05",
+      network: "eip155:8453" as const,
+    },
+    serviceName: "Smart Money Daily Brief",
+    tags: ["smart-money", "crypto", "onchain", "intelligence"],
+    description:
+      "Daily smart-money brief for ETH/Base/Solana: 24h net asset changes across monitored onchain addresses with smart-money interpretation. Use when an agent needs an onchain whale/flow summary for a trading day. Pay $0.05 USDC per call on Base mainnet.",
+    extensions: {
+      ...declareDiscoveryExtension({
+        pathParams: {},
+        output: {
+          example: {
+            date: "2026-10-14",
+            generated_at: "2026-10-14 14:34",
+            content: "（Markdown 全文，此处省略）",
+          },
+        },
+      }),
+    },
+  },
 };
 
 // ---- 惰性单例：首次请求时从 env 读 CDP 凭证，初始化 x402 server ----
-type Env = { CDP_API_KEY_ID?: string; CDP_API_KEY_SECRET?: string };
+type Env = {
+  CDP_API_KEY_ID?: string;
+  CDP_API_KEY_SECRET?: string;
+  SMARTMONEY_BRIEF?: KVNamespace;
+};
 
 let serverPromise: Promise<x402ResourceServer> | null = null;
 
@@ -291,6 +324,74 @@ app.use(async (c, next) => {
 
 app.get("/health", (c) => c.json({ status: "ok" }));
 
+// ---- OpenAPI 3.0 spec（Circle Agent Marketplace 上架前置；托管于服务自身）----
+const OPENAPI_SPEC = {
+  openapi: "3.0.3",
+  info: {
+    title: "x402-report — AI 行情快照与观点摘要服务",
+    version: "0.2.0",
+    description:
+      "按次付费（x402 / USDC）的行情数据与观点摘要 API：输入美股或加密货币代码（NVDA / AAOI / BTC / NEAR / TAO 等白名单），返回价格、24h 涨跌、52 周高低点及数据来源。Base 主网 USDC 结算，$0.001/次。",
+    "x-provider": {
+      name: "quanyida",
+      category: "FINANCIAL_ANALYSIS",
+      description:
+        "AI 行情快照与观点摘要：美股 + 加密双市场，支持股票报价（Yahoo Finance）与加密批量行情（CoinGecko），返回结构化 JSON，适合 Agent 做行情判断与投研素材。",
+    },
+  },
+  servers: [{ url: "https://x402-report.quanyida.workers.dev" }],
+  paths: {
+    "/report/{symbol}": {
+      get: {
+        summary: "获取指定美股/加密代码的行情快照与观点摘要",
+        description:
+          "未付费请求返回 402 Payment Required + PAYMENT-REQUIRED 头（x402 v2，含 accepts 价目表）；带有效 USDC 付款后返回行情 JSON。Base 主网，$0.001/次。",
+        parameters: [
+          {
+            name: "symbol",
+            in: "path",
+            required: true,
+            description: "美股或加密货币代码（NVDA / AAOI / AXTI / BTC / ETH / SOL / NEAR / TAO 等）",
+            schema: { type: "string", enum: [...ALLOWED_SYMBOLS] },
+          },
+        ],
+        responses: {
+          "200": {
+            description: "付费成功，返回行情快照",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    symbol: { type: "string" },
+                    type: { type: "string", enum: ["stock", "crypto"] },
+                    name: { type: "string" },
+                    price: { type: ["number", "null"] },
+                    change_24h_pct: { type: ["number", "null"] },
+                    currency: { type: "string" },
+                    high_52w: { type: ["number", "null"] },
+                    low_52w: { type: ["number", "null"] },
+                    source: { type: ["string", "null"] },
+                    generated_at: { type: "string", format: "date-time" },
+                  },
+                  required: ["symbol", "type"],
+                },
+              },
+            },
+          },
+          "400": { description: "非法 symbol（不在白名单）" },
+          "402": { description: "Payment Required — 需附 x402 付款头" },
+        },
+      },
+    },
+    "/health": {
+      get: { summary: "健康检查", responses: { "200": { description: "ok" } } },
+    },
+  },
+};
+
+app.get("/openapi.json", (c) => c.json(OPENAPI_SPEC));
+
 app.get("/report/:symbol", async (c) => {
   const symbol = c.req.param("symbol").toUpperCase();
 
@@ -321,6 +422,24 @@ app.get("/report/:symbol", async (c) => {
 
   setCached(symbol, report);
   return c.json(report);
+});
+
+// ---- 聪明钱每日简报完整版（付费 $0.05 解锁；内容存于 KV）----
+app.get("/smartmoney-brief", async (c) => {
+  const kv = c.env.SMARTMONEY_BRIEF;
+  if (!kv) {
+    return c.json({ error: "KV not bound" }, 500);
+  }
+  try {
+    const raw = await kv.get("latest_brief_full", "text");
+    if (!raw) {
+      return c.json({ error: "简报尚未生成，请稍后再试" }, 404);
+    }
+    const parsed = JSON.parse(raw);
+    return c.json(parsed);
+  } catch (e) {
+    return c.json({ error: "读取简报失败: " + String(e) }, 500);
+  }
 });
 
 export default app;

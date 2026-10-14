@@ -1,0 +1,75 @@
+{
+  "chain": "eth",
+  "latest_block": 26188934,
+  "prev_block": 26181734,
+  "lookback_hours": 24,
+  "threshold_usd": 100000,
+  "prices": {
+    "bitcoin": 83477,
+    "dai": 1.0,
+    "ethereum": 2504.8,
+    "tether": 0.999275,
+    "usd-coin": 0.99979
+  },
+  "signals": [],
+  "all": [
+    {
+      "name": "用户提供",
+      "address": "0xca0d8f914eda586fbc1b835e8e214eb3f6dbd8f3",
+      "tag": "user",
+      "assets": [
+        {
+          "symbol": "ETH",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 2504.8
+        },
+        {
+          "symbol": "USDC",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 0.99979
+        },
+        {
+          "symbol": "USDT",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 0.999275
+        },
+        {
+          "symbol": "DAI",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 1.0
+        },
+        {
+          "symbol": "wETH",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 2504.8
+        },
+        {
+          "symbol": "WBTC",
+          "balance_now": 0.0,
+          "balance_prev": 0.0,
+          "net_change": 0.0,
+          "net_change_usd": 0.0,
+          "price_usd": 83477
+        }
+      ],
+      "total_delta_usd": 0.0,
+      "is_signal": false,
+      "direction": "flat"
+    }
+  ]
+}

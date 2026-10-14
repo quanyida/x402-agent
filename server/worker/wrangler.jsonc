@@ -5,6 +5,12 @@
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
+  "kv_namespaces": [
+    {
+      "binding": "SMARTMONEY_BRIEF",
+      "id": "bff56b7b601047db8dcac33a24444771"
+    }
+  ],
   "vars": {
     // 收款地址固定为 NEAR 派生 Base 地址（代码内常量，无需环境变量）
     // CDP API key 通过 wrangler secret 注入：CDP_API_KEY_ID / CDP_API_KEY_SECRET

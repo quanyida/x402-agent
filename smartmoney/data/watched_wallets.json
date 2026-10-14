@@ -1,0 +1,17 @@
+{
+  "base": [
+    {"name": "Coinbase-1", "address": "0x71660c4005BA85c37ccec55d0C4493E66Cd775d3", "tag": "CEX"},
+    {"name": "Coinbase-2", "address": "0x503828976D22510aad0201ac7EC88293211D23Da", "tag": "CEX"},
+    {"name": "Coinbase-3", "address": "0xddfAbCdc4D8FfC6D5beaf154f18B778f892A0740", "tag": "CEX"},
+    {"name": "Binance-14", "address": "0x56Eddb7aa87536c09CCc2793473599fD21A8b17F", "tag": "CEX"},
+    {"name": "Binance-15", "address": "0xDFd5293D8e347dFe492E7ae80DED900e47DB0BC5", "tag": "CEX"},
+    {"name": "Binance-16", "address": "0x28C6c06298d514Db089934071355E5743bf21d60", "tag": "CEX"},
+    {"name": "用户提供", "address": "0xca0d8f914eda586fbc1b835e8e214eb3f6dbd8f3", "tag": "user"}
+  ],
+  "eth": [
+    {"name": "用户提供", "address": "0xca0d8f914eda586fbc1b835e8e214eb3f6dbd8f3", "tag": "user"}
+  ],
+  "solana": [
+    {"name": "Binance冷钱包", "address": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", "tag": "CEX"}
+  ]
+}
