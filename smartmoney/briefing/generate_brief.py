@@ -30,9 +30,20 @@ def load_signals(chain: str) -> dict:
         return json.load(f)
 
 
+def load_hl_perps() -> dict:
+    """读取 L4 Hyperliquid 永续多空数据（hl_collector.py 产出）。"""
+    path = os.path.join(DATA_DIR, "latest_hl_perps.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 def fmt_usd(v: float) -> str:
     if abs(v) >= 1_000_000:
         return f"${v/1_000_000:,.2f}M"
+    if abs(v) >= 1_000:
+        return f"${v/1_000:,.1f}K"
     return f"${v:+,.2f}"
 
 
@@ -44,12 +55,27 @@ def fmt_amt(v: float, sym: str) -> str:
     return f"{v:.4f} {sym}"
 
 
+def fmt_hl_perps_table(coins: list, top: int = 10) -> list:
+    """L4 永续多空方向表（Markdown 行）。"""
+    lines = ["| 币种 | 方向 | 净敞口(USD) | 多头$ | 空头$ | 多/空账户 |",
+             "|---|---|---|---|---|---|"]
+    for c in coins[:top]:
+        side = "🟢 多" if c["side"] == "LONG" else "🔴 空"
+        lines.append(
+            f"| {c['coin']} | {side} | {fmt_usd(c['net_usd'])} | "
+            f"{fmt_usd(c['longs_usd'])} | {fmt_usd(c['shorts_usd'])} | "
+            f"{c['n_long']}/{c['n_short']} |"
+        )
+    return lines
+
+
 def generate_brief_parts() -> dict:
     """生成简报两部分：
     - free: 免费摘要版（总览+信号+Top异动+市场快照）→ M5 X 引流
     - full: 完整版（逐地址全资产明细+解读框架）→ M4 x402 付费端点
     """
     chains = {c: load_signals(c) for c in CHAIN_NAMES}
+    hl = load_hl_perps()
     now = datetime.now(timezone(timedelta(hours=8)))
     date_str = now.strftime("%Y-%m-%d")
     ts_str = now.strftime("%Y-%m-%d %H:%M")
@@ -126,6 +152,27 @@ def generate_brief_parts() -> dict:
         free.append("今日监控地址无任何非零变动。")
         free.append("")
 
+    # ---------- L4: Hyperliquid 永续聪明钱多空方向 ----------
+    if hl:
+        hl_coins = hl.get("coins", [])
+        hl_sig = hl.get("signals", [])
+        free.append("## ⚡ Hyperliquid 永续多空方向（聪明钱 L4）")
+        free.append("")
+        free.append(f"> 数据源：Hyperliquid leaderboard Top {hl.get('queried', 0)} 大账户持仓聚合 "
+                    f"（生成于 {hl.get('generated_at', '')}）")
+        free.append("")
+        free.extend(fmt_hl_perps_table(hl_coins, top=10))
+        free.append("")
+        if hl_sig:
+            top_long = next((s for s in hl_sig if s["side"] == "LONG"), None)
+            top_short = next((s for s in hl_sig if s["side"] == "SHORT"), None)
+            if top_long:
+                free.append(f"- 🟢 最强净多：**{top_long['coin']}** {fmt_usd(top_long['net_usd'])}")
+            if top_short:
+                free.append(f"- 🔴 最强净空：**{top_short['coin']}** {fmt_usd(top_short['net_usd'])}")
+            free.append("")
+        free.append("")
+
     free.append("## 💹 市场快照")
     free.append("")
     prices = {}
@@ -174,6 +221,26 @@ def generate_brief_parts() -> dict:
                             f"{fmt_amt(x['net_change'], x['symbol'])} | {fmt_usd(x['net_change_usd'])} |")
             full.append("")
 
+    # ---------- L4: Hyperliquid 永续多空（完整版详细） ----------
+    if hl:
+        full.append("## ⚡ Hyperliquid 永续多空方向（完整）")
+        full.append("")
+        full.append(f"Top {hl.get('queried', 0)} 大账户持仓聚合（{hl.get('generated_at', '')}），"
+                    f"账户总价值 ${hl.get('total_account_value_usd', 0):,.0f}，"
+                    f"查询失败 {hl.get('failed', 0)}")
+        full.append("")
+        full.extend(fmt_hl_perps_table(hl.get("coins", []), top=20))
+        full.append("")
+        if hl.get("signals"):
+            full.append("### 🎯 方向信号（净敞口 ≥ $2M）")
+            full.append("")
+            for s in hl["signals"]:
+                emoji = "🟢" if s["side"] == "LONG" else "🔴"
+                full.append(f"- {emoji} **{s['coin']}** 净{s['side']} "
+                            f"{fmt_usd(s['net_usd'])}（多头 {fmt_usd(s['longs_usd'])} / "
+                            f"空头 {fmt_usd(s['shorts_usd'])}）")
+            full.append("")
+
     # 解读框架（M3.5 LLM 升级占位；当前规则化）
     full.append("## 🧠 聪明钱解读（规则化）")
     full.append("")
@@ -186,11 +253,28 @@ def generate_brief_parts() -> dict:
                     f"tag={a.get('tag', '-')}。")
     if not movers_all:
         full.append("- 今日监控地址无显著异动，市场整体平稳。")
+    # L4 方向解读
+    if hl:
+        hl_sig = hl.get("signals", [])
+        if hl_sig:
+            full.append("")
+            full.append("### ⚡ Hyperliquid 方向信号解读")
+            full.append("")
+            for s in hl_sig[:5]:
+                emoji = "🟢 偏多" if s["side"] == "LONG" else "🔴 偏空"
+                full.append(f"- **{s['coin']}**：Top 大账户{emoji}（净 "
+                            f"{fmt_usd(s['net_usd'])}），多空账户 "
+                            f"{s.get('n_long', '?')}/{s.get('n_short', '?')}。")
+            if hl_sig and all(s["side"] == "SHORT" for s in hl_sig[:3]):
+                full.append("- ⚠️ 当前 Top 大账户整体偏空，注意对冲型账户（做市商/量化）占比较高时，"
+                            "方向信号需结合持仓变化趋势使用。")
     full.append("")
     full.append("## 📌 明日关注点")
     full.append("")
     full.append("- 持续跟踪上述异动地址的后续动作（转入/转出对手方）")
     full.append("- 阈值信号如持续累积，关注对应链的资金流向趋势")
+    if hl and hl.get("signals"):
+        full.append(f"- Hyperliquid 最强净空 {hl['signals'][0]['coin']}：观察是否持续加空/回补")
     full.append("")
     return {"free": "\n".join(free), "full": "\n".join(full), "date": date_str,
             "generated_at": ts_str}

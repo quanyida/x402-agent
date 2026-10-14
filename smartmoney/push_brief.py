@@ -27,7 +27,13 @@ def push_to_kv():
         build_brief()
     with open(BRIEF_FULL, "r", encoding="utf-8") as f:
         content = f.read()
-    payload = json.dumps({"date": "2026-10-14", "generated_at": "2026-10-14",
+    # 日期取自简报自身（generate_brief 写入的 date/generated_at），避免硬编码过期
+    date_str = ""
+    ts_str = ""
+    for line in content.splitlines()[:5]:
+        if line.startswith("# 聪明钱每日简报"):
+            date_str = line.split("·")[-1].strip()
+    payload = json.dumps({"date": date_str, "generated_at": ts_str,
                           "content": content}, ensure_ascii=False)
     tmp = os.path.join(DATA_DIR, "kv_payload.json")
     with open(tmp, "w", encoding="utf-8") as f:
