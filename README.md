@@ -1,5 +1,47 @@
 # x402-agent
 
+## ⚡ Smart Money Brief — 聪明钱每日简报（付费服务）
+
+> **30 秒看懂 Hyperliquid Top 50 大账户在干嘛**：永续多空净敞口 + 24h 增量变化（delta）。数据驱动，机器可读，直接喂给 Agent 或人工速读。
+
+- **定价**：`$0.05 / 次`（Base 主网 USDC，x402 协议自动结算）
+- **端点**：`GET https://x402-report.quanyida.workers.dev/smartmoney-brief`
+- **支付**：NEAR 链签名 或 CDP USDC 钱包均可（用 NEAR 账户付款无需注册 CDP）
+- **上架**：Coinbase CDP Bazaar / Circle Agent Marketplace / Cloudflare Worker
+
+### 你今天会得到什么（2026-10-15 真实输出）
+
+| 币种 | 动作 | 变化 |
+|---|---|---|
+| BTC | 加空 | $-42.13M |
+| LIT | 回补(减空) | $+10.30M |
+| HYPE | 翻多 | $+8.95M |
+| XRP | 翻多 | $+6.91M |
+| SOL | 加空 | $-6.83M |
+| ETH | 回补(减空) | $+4.83M |
+
+完整版包含：Top 50 大账户逐币种多空净敞口表、方向信号、delta 明细、规则化解读、明日关注点。
+
+### 怎么调用
+
+```bash
+# 方式一：curl 直连（返回 402 + 付款要求，用 x402 客户端自动支付）
+curl -i https://x402-report.quanyida.workers.dev/smartmoney-brief
+
+# 方式二：用本仓库 skill（支持 NEAR 账户自动付款）
+cd skills/x402-bazaar-client
+python scripts/x402_bazaar.py list --network eip155:8453 --mainnet
+python scripts/x402_bazaar.py call 0 --signer near --yes   # 按列表序号选择本服务
+```
+
+### 为什么用 NEAR 也能付？
+
+x402-bazaar-client 支持 **NEAR Chain Signatures**：用你的 NEAR 账户派生 EVM 地址、签名 x402 付款头，余额不足时通过 1Click 自动把 NEAR 资产兑换成目标链 USDC。**没有 CDP 账号也能消费 x402 服务。**
+
+---
+
+## 技术部分（本仓库还包含什么）
+
 x402 协议的学习与实践仓库：自建付费 HTTP 服务（FastAPI / FastMCP / Cloudflare Worker）、买家客户端、可复用 Skills 与全流程实验记录。
 
 > x402 是一种基于 HTTP `402 Payment Required` 的机器间支付协议：服务端对资源定价，客户端签名支付授权并携带付款头重试，服务端验证并链上结算（Base USDC 等）后放行资源。
