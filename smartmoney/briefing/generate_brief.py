@@ -156,6 +156,7 @@ def generate_brief_parts() -> dict:
     if hl:
         hl_coins = hl.get("coins", [])
         hl_sig = hl.get("signals", [])
+        hl_delta = hl.get("delta", {})
         free.append("## ⚡ Hyperliquid 永续多空方向（聪明钱 L4）")
         free.append("")
         free.append(f"> 数据源：Hyperliquid leaderboard Top {hl.get('queried', 0)} 大账户持仓聚合 "
@@ -170,6 +171,22 @@ def generate_brief_parts() -> dict:
                 free.append(f"- 🟢 最强净多：**{top_long['coin']}** {fmt_usd(top_long['net_usd'])}")
             if top_short:
                 free.append(f"- 🔴 最强净空：**{top_short['coin']}** {fmt_usd(top_short['net_usd'])}")
+            free.append("")
+        # L4 delta（方案B：较上一截面的变化）
+        if hl_delta and hl_delta.get("items"):
+            free.append("### 📈 较上次截面变化（delta）")
+            free.append("")
+            free.append(f"> {hl_delta.get('prev_generated_at', '?')} → "
+                        f"{hl_delta.get('now_generated_at', '?')}"
+                        + (f"（{hl_delta.get('hours_elapsed')}h）" if hl_delta.get('hours_elapsed') is not None else "")
+                        + "；账户总价值 "
+                        + fmt_usd(hl_delta.get("total_value_delta_usd", 0)))
+            free.append("")
+            free.append("| 币种 | 动作 | 上一净额 | 当前净额 | 变化 |")
+            free.append("|---|---|---|---|---|")
+            for it in hl_delta["items"][:8]:
+                free.append(f"| {it['coin']} | {it['action']} | {fmt_usd(it['prev_net_usd'])} | "
+                            f"{fmt_usd(it['now_net_usd'])} | {fmt_usd(it['delta_usd'])} |")
             free.append("")
         free.append("")
 
@@ -241,6 +258,25 @@ def generate_brief_parts() -> dict:
                             f"空头 {fmt_usd(s['shorts_usd'])}）")
             full.append("")
 
+        # L4 delta 明细（方案B）
+        hl_delta = hl.get("delta", {})
+        if hl_delta and hl_delta.get("items"):
+            full.append("### 📈 净敞口变化（delta，较上一截面）")
+            full.append("")
+            full.append(f"> {hl_delta.get('prev_generated_at', '?')} → "
+                        f"{hl_delta.get('now_generated_at', '?')}"
+                        + (f"（{hl_delta.get('hours_elapsed')}h）" if hl_delta.get('hours_elapsed') is not None else "")
+                        + "；账户总价值变化 "
+                        + fmt_usd(hl_delta.get("total_value_delta_usd", 0)))
+            full.append("")
+            full.append("| 币种 | 动作 | 上一净额 | 当前净额 | 变化 | 当前多/空 |")
+            full.append("|---|---|---|---|---|---|")
+            for it in hl_delta["items"][:20]:
+                full.append(f"| {it['coin']} | {it['action']} | {fmt_usd(it['prev_net_usd'])} | "
+                            f"{fmt_usd(it['now_net_usd'])} | {fmt_usd(it['delta_usd'])} | "
+                            f"{it.get('n_long', '?')}/{it.get('n_short', '?')} |")
+            full.append("")
+
     # 解读框架（M3.5 LLM 升级占位；当前规则化）
     full.append("## 🧠 聪明钱解读（规则化）")
     full.append("")
@@ -268,6 +304,30 @@ def generate_brief_parts() -> dict:
             if hl_sig and all(s["side"] == "SHORT" for s in hl_sig[:3]):
                 full.append("- ⚠️ 当前 Top 大账户整体偏空，注意对冲型账户（做市商/量化）占比较高时，"
                             "方向信号需结合持仓变化趋势使用。")
+        # delta 解读（方案B）
+        hl_delta = hl.get("delta", {})
+        if hl_delta and hl_delta.get("items"):
+            full.append("")
+            full.append("### 📈 delta 解读（较上次截面）")
+            full.append("")
+            items = hl_delta["items"]
+            add_short = [it for it in items if it["action"] in ("加空", "翻空")][:3]
+            cover = [it for it in items if it["action"] in ("回补(减空)", "减多", "翻多")][:3]
+            if add_short:
+                full.append("- 🔴 加空方："
+                            + "、".join(f"**{it['coin']}** {fmt_usd(it['delta_usd'])}" for it in add_short)
+                            + "（空头账户 "
+                            + "/".join(f"{it['coin']} {it.get('n_short','?')}" for it in add_short)
+                            + "）。")
+            if cover:
+                full.append("- 🟢 减空/加多方："
+                            + "、".join(f"**{it['coin']}** {fmt_usd(it['delta_usd'])}" for it in cover)
+                            + "。")
+            total_d = hl_delta.get("total_value_delta_usd", 0)
+            if total_d < 0:
+                full.append(f"- 账户总价值变化 {fmt_usd(total_d)}：整体风险敞口收缩，"
+                            "与加空方向一致。")
+            full.append("")
     full.append("")
     full.append("## 📌 明日关注点")
     full.append("")
@@ -275,6 +335,10 @@ def generate_brief_parts() -> dict:
     full.append("- 阈值信号如持续累积，关注对应链的资金流向趋势")
     if hl and hl.get("signals"):
         full.append(f"- Hyperliquid 最强净空 {hl['signals'][0]['coin']}：观察是否持续加空/回补")
+    if hl and hl.get("delta", {}).get("items"):
+        big = hl["delta"]["items"][0]
+        full.append(f"- delta 最大变动 **{big['coin']}**（{big['action']} "
+                    f"{fmt_usd(big['delta_usd'])}）：确认是否延续。")
     full.append("")
     return {"free": "\n".join(free), "full": "\n".join(full), "date": date_str,
             "generated_at": ts_str}

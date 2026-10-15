@@ -1,924 +1,951 @@
 {
-  "generated_at": "2026-10-14 22:47",
+  "generated_at": "2026-10-15 12:48",
   "source": "Hyperliquid stats-data leaderboard + clearinghouseState",
   "top_n_attempted": 50,
   "queried": 50,
   "failed": 0,
-  "total_account_value_usd": 1039161860.75,
+  "total_account_value_usd": 1014417673.4,
   "coins": [
     {
-      "coin": "ETH",
-      "net_usd": -55290095.55,
-      "longs_usd": 47101411.73,
-      "shorts_usd": 102391507.28,
-      "n_long": 9,
-      "n_short": 11,
+      "coin": "BTC",
+      "net_usd": -76031803.51,
+      "longs_usd": 58695315.88,
+      "shorts_usd": 134727119.4,
+      "n_long": 10,
+      "n_short": 10,
       "side": "SHORT"
     },
     {
-      "coin": "BTC",
-      "net_usd": -33906371.47,
-      "longs_usd": 65408406.22,
-      "shorts_usd": 99314777.69,
-      "n_long": 10,
+      "coin": "ETH",
+      "net_usd": -50463230.29,
+      "longs_usd": 45186911.78,
+      "shorts_usd": 95650142.07,
+      "n_long": 8,
       "n_short": 11,
       "side": "SHORT"
     },
     {
       "coin": "SOL",
-      "net_usd": -30572289.58,
-      "longs_usd": 1089572.23,
-      "shorts_usd": 31661861.81,
-      "n_long": 5,
-      "n_short": 11,
-      "side": "SHORT"
-    },
-    {
-      "coin": "LIT",
-      "net_usd": -15225518.27,
-      "longs_usd": 730048.3,
-      "shorts_usd": 15955566.57,
-      "n_long": 5,
-      "n_short": 6,
+      "net_usd": -37401013.5,
+      "longs_usd": 4869850.03,
+      "shorts_usd": 42270863.52,
+      "n_long": 7,
+      "n_short": 8,
       "side": "SHORT"
     },
     {
       "coin": "ZEC",
-      "net_usd": -13348169.51,
-      "longs_usd": 9639501.72,
-      "shorts_usd": 22987671.23,
+      "net_usd": -15338199.89,
+      "longs_usd": 5483891.39,
+      "shorts_usd": 20822091.28,
       "n_long": 4,
-      "n_short": 10,
+      "n_short": 12,
       "side": "SHORT"
     },
     {
-      "coin": "HYPE",
-      "net_usd": -8683696.34,
-      "longs_usd": 13045969.86,
-      "shorts_usd": 21729666.2,
-      "n_long": 6,
-      "n_short": 13,
+      "coin": "XRP",
+      "net_usd": 6025033.84,
+      "longs_usd": 12800085.67,
+      "shorts_usd": 6775051.83,
+      "n_long": 4,
+      "n_short": 8,
+      "side": "LONG"
+    },
+    {
+      "coin": "DOGE",
+      "net_usd": -5229195.17,
+      "longs_usd": 205094.02,
+      "shorts_usd": 5434289.18,
+      "n_long": 3,
+      "n_short": 6,
+      "side": "SHORT"
+    },
+    {
+      "coin": "LIT",
+      "net_usd": -4923197.19,
+      "longs_usd": 1483585.2,
+      "shorts_usd": 6406782.39,
+      "n_long": 7,
+      "n_short": 3,
       "side": "SHORT"
     },
     {
       "coin": "NEAR",
-      "net_usd": -8407345.41,
-      "longs_usd": 2153513.42,
-      "shorts_usd": 10560858.83,
-      "n_long": 9,
+      "net_usd": -4817928.54,
+      "longs_usd": 2874856.52,
+      "shorts_usd": 7692785.07,
+      "n_long": 8,
       "n_short": 5,
       "side": "SHORT"
     },
     {
-      "coin": "DOGE",
-      "net_usd": -5585426.67,
-      "longs_usd": 300753.26,
-      "shorts_usd": 5886179.93,
-      "n_long": 3,
-      "n_short": 6,
-      "side": "SHORT"
-    },
-    {
       "coin": "WLD",
-      "net_usd": -4327655.32,
-      "longs_usd": 549658.54,
-      "shorts_usd": 4877313.86,
-      "n_long": 3,
-      "n_short": 6,
-      "side": "SHORT"
-    },
-    {
-      "coin": "PONS",
-      "net_usd": -3964540.6,
-      "longs_usd": 4902.83,
-      "shorts_usd": 3969443.43,
-      "n_long": 1,
-      "n_short": 6,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ONDO",
-      "net_usd": -2610993.12,
-      "longs_usd": 452949.2,
-      "shorts_usd": 3063942.33,
-      "n_long": 3,
+      "net_usd": -4051325.03,
+      "longs_usd": 721056.11,
+      "shorts_usd": 4772381.13,
+      "n_long": 4,
       "n_short": 6,
       "side": "SHORT"
     },
     {
       "coin": "CASHCAT",
-      "net_usd": -2470072.13,
-      "longs_usd": 273219.01,
-      "shorts_usd": 2743291.15,
+      "net_usd": -2902984.22,
+      "longs_usd": 276844.21,
+      "shorts_usd": 3179828.43,
       "n_long": 1,
       "n_short": 3,
       "side": "SHORT"
     },
     {
       "coin": "kPEPE",
-      "net_usd": -2352433.72,
-      "longs_usd": 721589.17,
-      "shorts_usd": 3074022.89,
-      "n_long": 5,
-      "n_short": 2,
+      "net_usd": -2712344.5,
+      "longs_usd": 423127.31,
+      "shorts_usd": 3135471.81,
+      "n_long": 4,
+      "n_short": 3,
+      "side": "SHORT"
+    },
+    {
+      "coin": "PONS",
+      "net_usd": -2598369.04,
+      "longs_usd": 59634.87,
+      "shorts_usd": 2658003.92,
+      "n_long": 3,
+      "n_short": 4,
       "side": "SHORT"
     },
     {
       "coin": "TAO",
-      "net_usd": -2288908.34,
-      "longs_usd": 290110.78,
-      "shorts_usd": 2579019.12,
-      "n_long": 4,
+      "net_usd": -2342271.7,
+      "longs_usd": 287279.31,
+      "shorts_usd": 2629551.01,
+      "n_long": 5,
+      "n_short": 4,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ONDO",
+      "net_usd": -1989534.5,
+      "longs_usd": 641019.16,
+      "shorts_usd": 2630553.66,
+      "n_long": 5,
       "n_short": 5,
       "side": "SHORT"
     },
     {
-      "coin": "PUMP",
-      "net_usd": -2243769.5,
-      "longs_usd": 4845512.06,
-      "shorts_usd": 7089281.56,
+      "coin": "PAXG",
+      "net_usd": 1815157.68,
+      "longs_usd": 1815157.68,
+      "shorts_usd": 0.0,
       "n_long": 6,
-      "n_short": 3,
-      "side": "SHORT"
-    },
-    {
-      "coin": "SUI",
-      "net_usd": 2002197.0,
-      "longs_usd": 2012035.31,
-      "shorts_usd": 9838.31,
-      "n_long": 8,
-      "n_short": 1,
+      "n_short": 0,
       "side": "LONG"
     },
     {
+      "coin": "SUI",
+      "net_usd": 1803593.34,
+      "longs_usd": 1827072.68,
+      "shorts_usd": 23479.33,
+      "n_long": 7,
+      "n_short": 3,
+      "side": "LONG"
+    },
+    {
+      "coin": "UNI",
+      "net_usd": -1780850.68,
+      "longs_usd": 154966.43,
+      "shorts_usd": 1935817.11,
+      "n_long": 3,
+      "n_short": 7,
+      "side": "SHORT"
+    },
+    {
       "coin": "ENA",
-      "net_usd": -1811571.23,
-      "longs_usd": 1326673.54,
-      "shorts_usd": 3138244.77,
+      "net_usd": -1556258.43,
+      "longs_usd": 1281267.61,
+      "shorts_usd": 2837526.04,
       "n_long": 4,
       "n_short": 6,
       "side": "SHORT"
     },
     {
-      "coin": "UNI",
-      "net_usd": -1662581.64,
-      "longs_usd": 231165.48,
-      "shorts_usd": 1893747.12,
+      "coin": "VVV",
+      "net_usd": -1548444.49,
+      "longs_usd": 1030.93,
+      "shorts_usd": 1549475.42,
       "n_long": 2,
-      "n_short": 8,
+      "n_short": 5,
       "side": "SHORT"
     },
     {
-      "coin": "VVV",
-      "net_usd": -1651917.92,
-      "longs_usd": 247.0,
-      "shorts_usd": 1652164.93,
-      "n_long": 1,
+      "coin": "GRAM",
+      "net_usd": -1394355.96,
+      "longs_usd": 0.0,
+      "shorts_usd": 1394355.96,
+      "n_long": 0,
       "n_short": 6,
       "side": "SHORT"
     },
     {
-      "coin": "AERO",
-      "net_usd": -1633388.79,
-      "longs_usd": 0.0,
-      "shorts_usd": 1633388.79,
-      "n_long": 0,
-      "n_short": 3,
-      "side": "SHORT"
-    },
-    {
       "coin": "TRX",
-      "net_usd": 1401726.07,
-      "longs_usd": 1401726.07,
+      "net_usd": 1386091.37,
+      "longs_usd": 1386091.37,
       "shorts_usd": 0.0,
       "n_long": 3,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "GRAM",
-      "net_usd": -1336611.51,
-      "longs_usd": 7261.67,
-      "shorts_usd": 1343873.18,
-      "n_long": 2,
-      "n_short": 4,
-      "side": "SHORT"
-    },
-    {
-      "coin": "MON",
-      "net_usd": -1321526.08,
-      "longs_usd": 73244.59,
-      "shorts_usd": 1394770.67,
+      "coin": "AERO",
+      "net_usd": -1361865.56,
+      "longs_usd": 3179.37,
+      "shorts_usd": 1365044.92,
       "n_long": 1,
-      "n_short": 7,
+      "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "PAXG",
-      "net_usd": 1321027.3,
-      "longs_usd": 1321027.3,
-      "shorts_usd": 0.0,
-      "n_long": 6,
-      "n_short": 0,
-      "side": "LONG"
+      "coin": "PUMP",
+      "net_usd": -1353364.74,
+      "longs_usd": 5091958.7,
+      "shorts_usd": 6445323.44,
+      "n_long": 7,
+      "n_short": 3,
+      "side": "SHORT"
     },
     {
       "coin": "XPL",
-      "net_usd": -1302722.16,
-      "longs_usd": 537230.04,
-      "shorts_usd": 1839952.2,
+      "net_usd": -1248107.22,
+      "longs_usd": 495765.77,
+      "shorts_usd": 1743872.99,
       "n_long": 3,
       "n_short": 7,
       "side": "SHORT"
     },
     {
       "coin": "FARTCOIN",
-      "net_usd": -1201044.21,
-      "longs_usd": 741120.47,
-      "shorts_usd": 1942164.67,
+      "net_usd": -1110882.72,
+      "longs_usd": 794357.69,
+      "shorts_usd": 1905240.41,
       "n_long": 4,
       "n_short": 5,
       "side": "SHORT"
     },
     {
-      "coin": "ZRO",
-      "net_usd": 1110193.9,
-      "longs_usd": 2718634.42,
-      "shorts_usd": 1608440.52,
-      "n_long": 6,
-      "n_short": 2,
-      "side": "LONG"
-    },
-    {
-      "coin": "LDO",
-      "net_usd": -1007961.86,
-      "longs_usd": 5979.32,
-      "shorts_usd": 1013941.18,
+      "coin": "ASTER",
+      "net_usd": -1060597.32,
+      "longs_usd": 702180.83,
+      "shorts_usd": 1762778.15,
       "n_long": 2,
-      "n_short": 3,
+      "n_short": 6,
       "side": "SHORT"
     },
     {
-      "coin": "ASTER",
-      "net_usd": -960659.12,
-      "longs_usd": 803407.17,
-      "shorts_usd": 1764066.29,
-      "n_long": 4,
+      "coin": "LDO",
+      "net_usd": -1040016.85,
+      "longs_usd": 3175.39,
+      "shorts_usd": 1043192.24,
+      "n_long": 1,
       "n_short": 4,
       "side": "SHORT"
     },
     {
-      "coin": "USELESS",
-      "net_usd": -923647.26,
-      "longs_usd": 51658.13,
-      "shorts_usd": 975305.4,
-      "n_long": 2,
-      "n_short": 3,
-      "side": "SHORT"
-    },
-    {
-      "coin": "TIA",
-      "net_usd": -902279.1,
-      "longs_usd": 49.88,
-      "shorts_usd": 902328.98,
-      "n_long": 1,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
       "coin": "HBAR",
-      "net_usd": -901759.28,
+      "net_usd": -1025842.44,
       "longs_usd": 0.0,
-      "shorts_usd": 901759.28,
+      "shorts_usd": 1025842.44,
       "n_long": 0,
       "n_short": 3,
       "side": "SHORT"
     },
     {
-      "coin": "XRP",
-      "net_usd": -884528.2,
-      "longs_usd": 12993830.99,
-      "shorts_usd": 13878359.19,
-      "n_long": 7,
-      "n_short": 6,
-      "side": "SHORT"
-    },
-    {
-      "coin": "VIRTUAL",
-      "net_usd": -874981.41,
-      "longs_usd": 6815.35,
-      "shorts_usd": 881796.77,
-      "n_long": 2,
-      "n_short": 2,
+      "coin": "CRV",
+      "net_usd": -891583.15,
+      "longs_usd": 0.0,
+      "shorts_usd": 891583.15,
+      "n_long": 0,
+      "n_short": 5,
       "side": "SHORT"
     },
     {
       "coin": "WLFI",
-      "net_usd": 853197.06,
-      "longs_usd": 853243.89,
-      "shorts_usd": 46.83,
+      "net_usd": 864176.0,
+      "longs_usd": 864223.27,
+      "shorts_usd": 47.27,
       "n_long": 4,
       "n_short": 1,
       "side": "LONG"
     },
     {
+      "coin": "USELESS",
+      "net_usd": -848640.48,
+      "longs_usd": 38444.92,
+      "shorts_usd": 887085.39,
+      "n_long": 1,
+      "n_short": 4,
+      "side": "SHORT"
+    },
+    {
+      "coin": "VIRTUAL",
+      "net_usd": -835239.26,
+      "longs_usd": 9032.25,
+      "shorts_usd": 844271.52,
+      "n_long": 2,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
       "coin": "ADA",
-      "net_usd": 721968.34,
-      "longs_usd": 779712.26,
-      "shorts_usd": 57743.92,
-      "n_long": 3,
-      "n_short": 3,
+      "net_usd": 766658.28,
+      "longs_usd": 796836.72,
+      "shorts_usd": 30178.44,
+      "n_long": 4,
+      "n_short": 2,
       "side": "LONG"
     },
     {
+      "coin": "PYTH",
+      "net_usd": -741903.68,
+      "longs_usd": 0.0,
+      "shorts_usd": 741903.68,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
       "coin": "CC",
-      "net_usd": 693722.39,
-      "longs_usd": 759183.41,
-      "shorts_usd": 65461.02,
+      "net_usd": 737579.62,
+      "longs_usd": 794599.0,
+      "shorts_usd": 57019.38,
       "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "MORPHO",
+      "net_usd": -720704.64,
+      "longs_usd": 0.0,
+      "shorts_usd": 720704.64,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "TIA",
+      "net_usd": -673981.65,
+      "longs_usd": 127174.06,
+      "shorts_usd": 801155.71,
+      "n_long": 2,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ZRO",
+      "net_usd": 660843.53,
+      "longs_usd": 2199348.01,
+      "shorts_usd": 1538504.49,
+      "n_long": 6,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "kBONK",
+      "net_usd": -581544.37,
+      "longs_usd": 43249.72,
+      "shorts_usd": 624794.08,
+      "n_long": 1,
+      "n_short": 3,
+      "side": "SHORT"
+    },
+    {
+      "coin": "NIL",
+      "net_usd": -553032.33,
+      "longs_usd": 0.0,
+      "shorts_usd": 553032.33,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ATOM",
+      "net_usd": 520757.2,
+      "longs_usd": 528550.1,
+      "shorts_usd": 7792.9,
+      "n_long": 2,
       "n_short": 1,
       "side": "LONG"
     },
     {
       "coin": "LTC",
-      "net_usd": -657401.37,
-      "longs_usd": 469065.32,
-      "shorts_usd": 1126466.69,
+      "net_usd": -511975.08,
+      "longs_usd": 480549.37,
+      "shorts_usd": 992524.45,
       "n_long": 3,
       "n_short": 4,
       "side": "SHORT"
     },
     {
-      "coin": "MORPHO",
-      "net_usd": -642962.34,
+      "coin": "ZK",
+      "net_usd": -505104.92,
       "longs_usd": 0.0,
-      "shorts_usd": 642962.34,
+      "shorts_usd": 505104.92,
       "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "PYTH",
-      "net_usd": -612987.2,
-      "longs_usd": 0.0,
-      "shorts_usd": 612987.2,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "CRV",
-      "net_usd": -612378.6,
-      "longs_usd": 82636.0,
-      "shorts_usd": 695014.59,
-      "n_long": 1,
-      "n_short": 4,
-      "side": "SHORT"
-    },
-    {
-      "coin": "kBONK",
-      "net_usd": -611857.96,
-      "longs_usd": 43802.77,
-      "shorts_usd": 655660.73,
-      "n_long": 2,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "XLM",
-      "net_usd": -604823.98,
-      "longs_usd": 145305.54,
-      "shorts_usd": 750129.52,
-      "n_long": 1,
-      "n_short": 4,
-      "side": "SHORT"
-    },
-    {
-      "coin": "STRK",
-      "net_usd": -590751.35,
-      "longs_usd": 192.48,
-      "shorts_usd": 590943.84,
-      "n_long": 1,
-      "n_short": 5,
-      "side": "SHORT"
-    },
-    {
-      "coin": "AAVE",
-      "net_usd": -564217.0,
-      "longs_usd": 1560577.59,
-      "shorts_usd": 2124794.6,
-      "n_long": 3,
-      "n_short": 5,
-      "side": "SHORT"
-    },
-    {
-      "coin": "LINK",
-      "net_usd": 558115.55,
-      "longs_usd": 955026.74,
-      "shorts_usd": 396911.19,
-      "n_long": 4,
-      "n_short": 4,
-      "side": "LONG"
-    },
-    {
-      "coin": "NIL",
-      "net_usd": -556525.48,
-      "longs_usd": 0.0,
-      "shorts_usd": 556525.48,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "PENDLE",
-      "net_usd": -487176.68,
-      "longs_usd": 0.0,
-      "shorts_usd": 487176.68,
-      "n_long": 0,
-      "n_short": 4,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ATOM",
-      "net_usd": 419840.36,
-      "longs_usd": 475143.47,
-      "shorts_usd": 55303.11,
-      "n_long": 2,
       "n_short": 1,
-      "side": "LONG"
+      "side": "SHORT"
     },
     {
-      "coin": "JUP",
-      "net_usd": -419298.48,
-      "longs_usd": 195483.75,
-      "shorts_usd": 614782.23,
-      "n_long": 2,
-      "n_short": 2,
+      "coin": "INJ",
+      "net_usd": -492661.82,
+      "longs_usd": 0.0,
+      "shorts_usd": 492661.82,
+      "n_long": 0,
+      "n_short": 5,
       "side": "SHORT"
     },
     {
       "coin": "EIGEN",
-      "net_usd": -411240.25,
-      "longs_usd": 11874.23,
-      "shorts_usd": 423114.48,
+      "net_usd": -490092.22,
+      "longs_usd": 271.41,
+      "shorts_usd": 490363.62,
       "n_long": 1,
       "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "FIL",
-      "net_usd": -406846.53,
-      "longs_usd": 7474.85,
-      "shorts_usd": 414321.37,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
+      "coin": "LINK",
+      "net_usd": 478625.75,
+      "longs_usd": 892180.46,
+      "shorts_usd": 413554.71,
+      "n_long": 3,
+      "n_short": 5,
+      "side": "LONG"
     },
     {
-      "coin": "IMX",
-      "net_usd": -398455.5,
-      "longs_usd": 0.0,
-      "shorts_usd": 398455.5,
-      "n_long": 0,
-      "n_short": 2,
+      "coin": "STRK",
+      "net_usd": -465121.65,
+      "longs_usd": 661.81,
+      "shorts_usd": 465783.45,
+      "n_long": 1,
+      "n_short": 5,
       "side": "SHORT"
     },
     {
       "coin": "BNB",
-      "net_usd": -394207.61,
-      "longs_usd": 1913702.31,
-      "shorts_usd": 2307909.93,
+      "net_usd": -430673.1,
+      "longs_usd": 1913459.0,
+      "shorts_usd": 2344132.09,
       "n_long": 2,
       "n_short": 7,
       "side": "SHORT"
     },
     {
-      "coin": "ALGO",
-      "net_usd": -393385.76,
+      "coin": "PENDLE",
+      "net_usd": -419130.23,
       "longs_usd": 0.0,
-      "shorts_usd": 393385.76,
+      "shorts_usd": 419130.23,
       "n_long": 0,
-      "n_short": 2,
+      "n_short": 3,
       "side": "SHORT"
     },
     {
-      "coin": "RENDER",
-      "net_usd": -370400.23,
-      "longs_usd": 0.0,
-      "shorts_usd": 370400.23,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "GRASS",
-      "net_usd": -370259.46,
-      "longs_usd": 225995.88,
-      "shorts_usd": 596255.34,
-      "n_long": 2,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "POPCAT",
-      "net_usd": -370127.35,
-      "longs_usd": 0.0,
-      "shorts_usd": 370127.35,
-      "n_long": 0,
-      "n_short": 5,
-      "side": "SHORT"
-    },
-    {
-      "coin": "WIF",
-      "net_usd": -351446.32,
-      "longs_usd": 0.0,
-      "shorts_usd": 351446.32,
-      "n_long": 0,
+      "coin": "XLM",
+      "net_usd": -411020.34,
+      "longs_usd": 146273.51,
+      "shorts_usd": 557293.85,
+      "n_long": 1,
       "n_short": 4,
       "side": "SHORT"
     },
     {
-      "coin": "TRUMP",
-      "net_usd": 344491.95,
-      "longs_usd": 346059.71,
-      "shorts_usd": 1567.76,
-      "n_long": 5,
-      "n_short": 2,
-      "side": "LONG"
-    },
-    {
-      "coin": "W",
-      "net_usd": 342992.21,
-      "longs_usd": 360728.73,
-      "shorts_usd": 17736.52,
+      "coin": "MON",
+      "net_usd": -407154.1,
+      "longs_usd": 6461.72,
+      "shorts_usd": 413615.82,
       "n_long": 2,
-      "n_short": 2,
-      "side": "LONG"
+      "n_short": 5,
+      "side": "SHORT"
     },
     {
-      "coin": "PENGU",
-      "net_usd": 321425.11,
-      "longs_usd": 366278.02,
-      "shorts_usd": 44852.92,
-      "n_long": 4,
+      "coin": "IMX",
+      "net_usd": -405194.75,
+      "longs_usd": 0.0,
+      "shorts_usd": 405194.75,
+      "n_long": 0,
       "n_short": 2,
-      "side": "LONG"
-    },
-    {
-      "coin": "SAND",
-      "net_usd": 313495.2,
-      "longs_usd": 314890.46,
-      "shorts_usd": 1395.26,
-      "n_long": 2,
-      "n_short": 1,
-      "side": "LONG"
+      "side": "SHORT"
     },
     {
       "coin": "ARB",
-      "net_usd": 307411.1,
-      "longs_usd": 612238.76,
-      "shorts_usd": 304827.66,
+      "net_usd": 393558.95,
+      "longs_usd": 787101.39,
+      "shorts_usd": 393542.44,
       "n_long": 4,
       "n_short": 3,
       "side": "LONG"
     },
     {
-      "coin": "INJ",
-      "net_usd": -293258.61,
+      "coin": "RENDER",
+      "net_usd": -378537.69,
       "longs_usd": 0.0,
-      "shorts_usd": 293258.61,
+      "shorts_usd": 378537.69,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "W",
+      "net_usd": 358014.85,
+      "longs_usd": 367351.38,
+      "shorts_usd": 9336.52,
+      "n_long": 3,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "FIL",
+      "net_usd": -353484.36,
+      "longs_usd": 27379.93,
+      "shorts_usd": 380864.29,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "POPCAT",
+      "net_usd": -340972.67,
+      "longs_usd": 0.0,
+      "shorts_usd": 340972.67,
       "n_long": 0,
       "n_short": 5,
       "side": "SHORT"
     },
     {
       "coin": "MET",
-      "net_usd": 284894.32,
-      "longs_usd": 284894.32,
+      "net_usd": 318490.54,
+      "longs_usd": 318490.54,
       "shorts_usd": 0.0,
       "n_long": 3,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "SYRUP",
-      "net_usd": -275862.67,
-      "longs_usd": 0.0,
-      "shorts_usd": 275862.67,
-      "n_long": 0,
+      "coin": "PENGU",
+      "net_usd": 293012.05,
+      "longs_usd": 334857.12,
+      "shorts_usd": 41845.07,
+      "n_long": 5,
       "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "WIF",
+      "net_usd": -279872.72,
+      "longs_usd": 0.0,
+      "shorts_usd": 279872.72,
+      "n_long": 0,
+      "n_short": 4,
       "side": "SHORT"
     },
     {
+      "coin": "HYPE",
+      "net_usd": 269456.44,
+      "longs_usd": 21771328.32,
+      "shorts_usd": 21501871.88,
+      "n_long": 7,
+      "n_short": 11,
+      "side": "LONG"
+    },
+    {
       "coin": "MELANIA",
-      "net_usd": 273417.9,
-      "longs_usd": 273885.8,
-      "shorts_usd": 467.9,
+      "net_usd": 258932.97,
+      "longs_usd": 259383.65,
+      "shorts_usd": 450.68,
       "n_long": 3,
       "n_short": 1,
       "side": "LONG"
     },
     {
-      "coin": "ZK",
-      "net_usd": -272520.07,
+      "coin": "SKY",
+      "net_usd": -253912.14,
       "longs_usd": 0.0,
-      "shorts_usd": 272520.07,
+      "shorts_usd": 253912.14,
       "n_long": 0,
-      "n_short": 1,
+      "n_short": 2,
       "side": "SHORT"
     },
     {
       "coin": "STABLE",
-      "net_usd": 262773.5,
-      "longs_usd": 262773.5,
+      "net_usd": 252673.49,
+      "longs_usd": 252673.49,
       "shorts_usd": 0.0,
       "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "SKY",
-      "net_usd": -259703.24,
+      "coin": "SAND",
+      "net_usd": 250668.27,
+      "longs_usd": 251934.77,
+      "shorts_usd": 1266.5,
+      "n_long": 2,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "BERA",
+      "net_usd": 231240.79,
+      "longs_usd": 231443.28,
+      "shorts_usd": 202.49,
+      "n_long": 4,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "REZ",
+      "net_usd": -214758.17,
       "longs_usd": 0.0,
-      "shorts_usd": 259703.24,
+      "shorts_usd": 214758.17,
       "n_long": 0,
       "n_short": 2,
       "side": "SHORT"
     },
     {
+      "coin": "TRUMP",
+      "net_usd": 212809.07,
+      "longs_usd": 213292.93,
+      "shorts_usd": 483.87,
+      "n_long": 6,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "JUP",
+      "net_usd": 207268.09,
+      "longs_usd": 722983.2,
+      "shorts_usd": 515715.11,
+      "n_long": 2,
+      "n_short": 2,
+      "side": "LONG"
+    },
+    {
+      "coin": "kSHIB",
+      "net_usd": -201680.6,
+      "longs_usd": 13292.93,
+      "shorts_usd": 214973.53,
+      "n_long": 1,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "2Z",
+      "net_usd": 199273.86,
+      "longs_usd": 199291.34,
+      "shorts_usd": 17.48,
+      "n_long": 2,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "DOT",
+      "net_usd": 196558.7,
+      "longs_usd": 229098.9,
+      "shorts_usd": 32540.21,
+      "n_long": 3,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "SEI",
+      "net_usd": -194078.48,
+      "longs_usd": 94758.63,
+      "shorts_usd": 288837.11,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "APE",
+      "net_usd": -193599.7,
+      "longs_usd": 0.0,
+      "shorts_usd": 193599.7,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "STX",
+      "net_usd": 193490.91,
+      "longs_usd": 193492.67,
+      "shorts_usd": 1.76,
+      "n_long": 2,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "ALGO",
+      "net_usd": -187853.58,
+      "longs_usd": 0.0,
+      "shorts_usd": 187853.58,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "GRIFFAIN",
+      "net_usd": 175631.26,
+      "longs_usd": 175684.15,
+      "shorts_usd": 52.89,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "RESOLV",
+      "net_usd": -171296.2,
+      "longs_usd": 0.0,
+      "shorts_usd": 171296.2,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "GRASS",
+      "net_usd": 159192.0,
+      "longs_usd": 525714.8,
+      "shorts_usd": 366522.8,
+      "n_long": 2,
+      "n_short": 2,
+      "side": "LONG"
+    },
+    {
+      "coin": "BCH",
+      "net_usd": 158235.64,
+      "longs_usd": 258774.54,
+      "shorts_usd": 100538.9,
+      "n_long": 3,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "ZETA",
+      "net_usd": 158155.49,
+      "longs_usd": 158155.49,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "SAGA",
+      "net_usd": -153556.07,
+      "longs_usd": 0.0,
+      "shorts_usd": 153556.07,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "SYRUP",
+      "net_usd": -151276.87,
+      "longs_usd": 0.0,
+      "shorts_usd": 151276.87,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
       "coin": "APT",
-      "net_usd": -243433.42,
-      "longs_usd": 258912.13,
-      "shorts_usd": 502345.55,
+      "net_usd": -150727.17,
+      "longs_usd": 292375.17,
+      "shorts_usd": 443102.34,
       "n_long": 1,
       "n_short": 3,
       "side": "SHORT"
     },
     {
-      "coin": "SEI",
-      "net_usd": -232013.5,
-      "longs_usd": 70058.56,
-      "shorts_usd": 302072.05,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "FET",
-      "net_usd": -228559.0,
-      "longs_usd": 59793.79,
-      "shorts_usd": 288352.78,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "2Z",
-      "net_usd": 204958.63,
-      "longs_usd": 204976.7,
-      "shorts_usd": 18.07,
-      "n_long": 2,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "kSHIB",
-      "net_usd": -202839.21,
-      "longs_usd": 17505.19,
-      "shorts_usd": 220344.4,
-      "n_long": 1,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "REZ",
-      "net_usd": -190857.6,
+      "coin": "JTO",
+      "net_usd": -144883.65,
       "longs_usd": 0.0,
-      "shorts_usd": 190857.6,
+      "shorts_usd": 144883.65,
+      "n_long": 0,
+      "n_short": 4,
+      "side": "SHORT"
+    },
+    {
+      "coin": "LINEA",
+      "net_usd": -134214.43,
+      "longs_usd": 0.0,
+      "shorts_usd": 134214.43,
       "n_long": 0,
       "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "RESOLV",
-      "net_usd": -189892.45,
-      "longs_usd": 0.0,
-      "shorts_usd": 189892.45,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "APE",
-      "net_usd": -182388.53,
-      "longs_usd": 0.0,
-      "shorts_usd": 182388.53,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "BOME",
-      "net_usd": 178835.3,
-      "longs_usd": 179634.06,
-      "shorts_usd": 798.76,
-      "n_long": 1,
-      "n_short": 2,
-      "side": "LONG"
-    },
-    {
-      "coin": "GRIFFAIN",
-      "net_usd": 175454.03,
-      "longs_usd": 175508.59,
-      "shorts_usd": 54.56,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "AVAX",
-      "net_usd": -172549.08,
-      "longs_usd": 522237.82,
-      "shorts_usd": 694786.9,
-      "n_long": 1,
-      "n_short": 5,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ZETA",
-      "net_usd": 171170.98,
-      "longs_usd": 171170.98,
+      "coin": "BLUR",
+      "net_usd": 132699.62,
+      "longs_usd": 132699.62,
       "shorts_usd": 0.0,
-      "n_long": 1,
+      "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "DOT",
-      "net_usd": 166853.26,
-      "longs_usd": 210166.34,
-      "shorts_usd": 43313.08,
-      "n_long": 2,
-      "n_short": 2,
+      "coin": "MNT",
+      "net_usd": -132018.09,
+      "longs_usd": 13562.31,
+      "shorts_usd": 145580.4,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "AR",
+      "net_usd": 123908.39,
+      "longs_usd": 183503.94,
+      "shorts_usd": 59595.55,
+      "n_long": 1,
+      "n_short": 1,
       "side": "LONG"
     },
     {
-      "coin": "SAGA",
-      "net_usd": -162359.35,
+      "coin": "HMSTR",
+      "net_usd": -121889.38,
       "longs_usd": 0.0,
-      "shorts_usd": 162359.35,
+      "shorts_usd": 121889.38,
       "n_long": 0,
       "n_short": 1,
       "side": "SHORT"
     },
     {
-      "coin": "STX",
-      "net_usd": 156273.59,
-      "longs_usd": 156275.33,
-      "shorts_usd": 1.74,
+      "coin": "AXS",
+      "net_usd": 118806.13,
+      "longs_usd": 118806.13,
+      "shorts_usd": 0.0,
       "n_long": 2,
-      "n_short": 1,
+      "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "LINEA",
-      "net_usd": -145179.05,
+      "coin": "BOME",
+      "net_usd": 118607.96,
+      "longs_usd": 119372.8,
+      "shorts_usd": 764.84,
+      "n_long": 1,
+      "n_short": 2,
+      "side": "LONG"
+    },
+    {
+      "coin": "PURR",
+      "net_usd": 118096.97,
+      "longs_usd": 118096.97,
+      "shorts_usd": 0.0,
+      "n_long": 2,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "RUNE",
+      "net_usd": -115948.69,
       "longs_usd": 0.0,
-      "shorts_usd": 145179.05,
+      "shorts_usd": 115948.69,
       "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "CFX",
+      "net_usd": -115393.23,
+      "longs_usd": 0.0,
+      "shorts_usd": 115393.23,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "AZTEC",
+      "net_usd": 113933.93,
+      "longs_usd": 113933.93,
+      "shorts_usd": 0.0,
+      "n_long": 2,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "MEGA",
+      "net_usd": -104137.91,
+      "longs_usd": 419.23,
+      "shorts_usd": 104557.15,
+      "n_long": 1,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "SUPER",
+      "net_usd": -104092.67,
+      "longs_usd": 0.0,
+      "shorts_usd": 104092.67,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "GMX",
+      "net_usd": -101726.58,
+      "longs_usd": 0.0,
+      "shorts_usd": 101726.58,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "AVAX",
+      "net_usd": -99890.22,
+      "longs_usd": 563837.94,
+      "shorts_usd": 663728.15,
+      "n_long": 2,
+      "n_short": 4,
+      "side": "SHORT"
+    },
+    {
+      "coin": "POL",
+      "net_usd": -96044.62,
+      "longs_usd": 0.0,
+      "shorts_usd": 96044.62,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "AVNT",
+      "net_usd": -93175.85,
+      "longs_usd": 13476.51,
+      "shorts_usd": 106652.35,
+      "n_long": 1,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ICP",
+      "net_usd": -92663.62,
+      "longs_usd": 136.31,
+      "shorts_usd": 92799.93,
+      "n_long": 1,
       "n_short": 2,
       "side": "SHORT"
     },
     {
       "coin": "DASH",
-      "net_usd": -144128.62,
-      "longs_usd": 0.0,
-      "shorts_usd": 144128.62,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "POL",
-      "net_usd": -136976.68,
-      "longs_usd": 0.0,
-      "shorts_usd": 136976.68,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "JTO",
-      "net_usd": -136717.59,
-      "longs_usd": 1389.46,
-      "shorts_usd": 138107.05,
-      "n_long": 1,
-      "n_short": 3,
-      "side": "SHORT"
-    },
-    {
-      "coin": "BCH",
-      "net_usd": 131925.74,
-      "longs_usd": 247481.25,
-      "shorts_usd": 115555.51,
-      "n_long": 3,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "MNT",
-      "net_usd": -131815.62,
-      "longs_usd": 13535.18,
-      "shorts_usd": 145350.8,
+      "net_usd": -90769.6,
+      "longs_usd": 180.9,
+      "shorts_usd": 90950.5,
       "n_long": 1,
       "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "HMSTR",
-      "net_usd": -125103.04,
-      "longs_usd": 0.0,
-      "shorts_usd": 125103.04,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "PURR",
-      "net_usd": 122066.56,
-      "longs_usd": 122066.56,
-      "shorts_usd": 0.0,
-      "n_long": 2,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "AXS",
-      "net_usd": 113892.41,
-      "longs_usd": 113892.41,
-      "shorts_usd": 0.0,
-      "n_long": 2,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "AR",
-      "net_usd": 111547.13,
-      "longs_usd": 171929.19,
-      "shorts_usd": 60382.05,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "RUNE",
-      "net_usd": -102821.76,
-      "longs_usd": 0.0,
-      "shorts_usd": 102821.76,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "GMX",
-      "net_usd": -99023.68,
-      "longs_usd": 0.0,
-      "shorts_usd": 99023.68,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "SUPER",
-      "net_usd": -95468.46,
-      "longs_usd": 0.0,
-      "shorts_usd": 95468.46,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "DYDX",
-      "net_usd": -94522.48,
-      "longs_usd": 2972.86,
-      "shorts_usd": 97495.34,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "CFX",
-      "net_usd": -94277.9,
-      "longs_usd": 0.0,
-      "shorts_usd": 94277.9,
-      "n_long": 0,
-      "n_short": 2,
       "side": "SHORT"
     },
     {
       "coin": "TRB",
-      "net_usd": 93839.69,
-      "longs_usd": 93839.69,
+      "net_usd": 90670.35,
+      "longs_usd": 90670.35,
       "shorts_usd": 0.0,
       "n_long": 2,
       "n_short": 0,
@@ -926,53 +953,26 @@
     },
     {
       "coin": "SNX",
-      "net_usd": 92096.49,
-      "longs_usd": 92096.49,
+      "net_usd": 89735.78,
+      "longs_usd": 89735.78,
       "shorts_usd": 0.0,
       "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "AVNT",
-      "net_usd": -91638.93,
-      "longs_usd": 19688.77,
-      "shorts_usd": 111327.7,
-      "n_long": 1,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "SPX",
-      "net_usd": 88945.06,
-      "longs_usd": 540354.65,
-      "shorts_usd": 451409.59,
-      "n_long": 2,
-      "n_short": 3,
-      "side": "LONG"
-    },
-    {
-      "coin": "BLUR",
-      "net_usd": 85643.64,
-      "longs_usd": 85837.18,
-      "shorts_usd": 193.54,
+      "coin": "ZEN",
+      "net_usd": 81748.43,
+      "longs_usd": 85935.98,
+      "shorts_usd": 4187.55,
       "n_long": 1,
       "n_short": 1,
       "side": "LONG"
     },
     {
-      "coin": "ENS",
-      "net_usd": -84697.19,
-      "longs_usd": 0.0,
-      "shorts_usd": 84697.19,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "RSR",
-      "net_usd": 83140.9,
-      "longs_usd": 83140.9,
+      "coin": "MERL",
+      "net_usd": 79113.59,
+      "longs_usd": 79113.59,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
@@ -980,242 +980,215 @@
     },
     {
       "coin": "GALA",
-      "net_usd": 81720.53,
-      "longs_usd": 81720.53,
+      "net_usd": 74205.56,
+      "longs_usd": 74205.56,
       "shorts_usd": 0.0,
       "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "BERA",
-      "net_usd": 81669.01,
-      "longs_usd": 87497.75,
-      "shorts_usd": 5828.74,
-      "n_long": 3,
+      "coin": "DYDX",
+      "net_usd": -73971.35,
+      "longs_usd": 2822.86,
+      "shorts_usd": 76794.21,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ENS",
+      "net_usd": -71003.7,
+      "longs_usd": 0.0,
+      "shorts_usd": 71003.7,
+      "n_long": 0,
       "n_short": 2,
-      "side": "LONG"
+      "side": "SHORT"
     },
     {
       "coin": "XMR",
-      "net_usd": 72629.12,
-      "longs_usd": 715865.75,
-      "shorts_usd": 643236.63,
-      "n_long": 4,
-      "n_short": 2,
+      "net_usd": 65884.25,
+      "longs_usd": 685881.87,
+      "shorts_usd": 619997.63,
+      "n_long": 3,
+      "n_short": 3,
       "side": "LONG"
-    },
-    {
-      "coin": "COMP",
-      "net_usd": -67711.9,
-      "longs_usd": 0.0,
-      "shorts_usd": 67711.9,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "KAS",
-      "net_usd": -66696.49,
-      "longs_usd": 0.0,
-      "shorts_usd": 66696.49,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
     },
     {
       "coin": "XAI",
-      "net_usd": 66432.0,
-      "longs_usd": 66432.0,
+      "net_usd": 64917.54,
+      "longs_usd": 64917.54,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "HEMI",
-      "net_usd": 63064.53,
-      "longs_usd": 63203.01,
-      "shorts_usd": 138.48,
+      "coin": "OP",
+      "net_usd": -64004.88,
+      "longs_usd": 2954.87,
+      "shorts_usd": 66959.76,
       "n_long": 1,
       "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "MERL",
-      "net_usd": 62186.64,
-      "longs_usd": 62186.64,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "STBL",
-      "net_usd": 60933.58,
-      "longs_usd": 60933.58,
-      "shorts_usd": 0.0,
-      "n_long": 3,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "MEGA",
-      "net_usd": -60109.23,
-      "longs_usd": 9.36,
-      "shorts_usd": 60118.59,
-      "n_long": 1,
-      "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "ZEN",
-      "net_usd": 58426.74,
-      "longs_usd": 62709.76,
-      "shorts_usd": 4283.02,
-      "n_long": 1,
-      "n_short": 1,
+      "coin": "SPX",
+      "net_usd": 61657.49,
+      "longs_usd": 490758.97,
+      "shorts_usd": 429101.48,
+      "n_long": 2,
+      "n_short": 3,
       "side": "LONG"
     },
     {
       "coin": "MINA",
-      "net_usd": 57873.04,
-      "longs_usd": 57873.04,
+      "net_usd": 61078.05,
+      "longs_usd": 61078.05,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "DYM",
-      "net_usd": 55952.63,
-      "longs_usd": 55992.89,
-      "shorts_usd": 40.26,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "ETC",
-      "net_usd": -55342.4,
-      "longs_usd": 115507.36,
-      "shorts_usd": 170849.76,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "USUAL",
-      "net_usd": -54327.92,
-      "longs_usd": 0.19,
-      "shorts_usd": 54328.12,
-      "n_long": 1,
+      "coin": "KAITO",
+      "net_usd": -57831.42,
+      "longs_usd": 123.67,
+      "shorts_usd": 57955.09,
+      "n_long": 2,
       "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "KAITO",
-      "net_usd": -52108.15,
-      "longs_usd": 7.38,
-      "shorts_usd": 52115.53,
-      "n_long": 1,
-      "n_short": 3,
+      "coin": "COMP",
+      "net_usd": -56567.59,
+      "longs_usd": 0.0,
+      "shorts_usd": 56567.59,
+      "n_long": 0,
+      "n_short": 2,
       "side": "SHORT"
     },
     {
       "coin": "SKR",
-      "net_usd": -50704.27,
-      "longs_usd": 24596.56,
-      "shorts_usd": 75300.82,
+      "net_usd": -54806.03,
+      "longs_usd": 17315.99,
+      "shorts_usd": 72122.02,
       "n_long": 1,
       "n_short": 1,
       "side": "SHORT"
     },
     {
-      "coin": "0G",
-      "net_usd": 50627.15,
-      "longs_usd": 50627.15,
+      "coin": "STBL",
+      "net_usd": 52710.97,
+      "longs_usd": 52710.97,
       "shorts_usd": 0.0,
-      "n_long": 2,
+      "n_long": 3,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "PNUT",
-      "net_usd": -48926.13,
-      "longs_usd": 0.0,
-      "shorts_usd": 48926.13,
-      "n_long": 0,
-      "n_short": 3,
-      "side": "SHORT"
-    },
-    {
-      "coin": "SOPH",
-      "net_usd": 48788.71,
-      "longs_usd": 48904.84,
-      "shorts_usd": 116.13,
-      "n_long": 2,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "AZTEC",
-      "net_usd": 47034.69,
-      "longs_usd": 47034.69,
-      "shorts_usd": 0.0,
-      "n_long": 2,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "CELO",
-      "net_usd": -46562.0,
-      "longs_usd": 0.0,
-      "shorts_usd": 46562.0,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ACE",
-      "net_usd": 39061.3,
-      "longs_usd": 39061.3,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "MOVE",
-      "net_usd": 38481.53,
-      "longs_usd": 38518.42,
-      "shorts_usd": 36.88,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "IO",
-      "net_usd": 37530.91,
-      "longs_usd": 37712.09,
-      "shorts_usd": 181.18,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "ICP",
-      "net_usd": -37471.92,
-      "longs_usd": 634.68,
-      "shorts_usd": 38106.59,
+      "coin": "USUAL",
+      "net_usd": -52415.06,
+      "longs_usd": 0.18,
+      "shorts_usd": 52415.25,
       "n_long": 1,
       "n_short": 2,
       "side": "SHORT"
     },
     {
+      "coin": "DYM",
+      "net_usd": 52284.02,
+      "longs_usd": 52323.28,
+      "shorts_usd": 39.25,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "HEMI",
+      "net_usd": 51098.74,
+      "longs_usd": 51235.9,
+      "shorts_usd": 137.17,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "PNUT",
+      "net_usd": -50225.72,
+      "longs_usd": 0.0,
+      "shorts_usd": 50225.72,
+      "n_long": 0,
+      "n_short": 3,
+      "side": "SHORT"
+    },
+    {
+      "coin": "AAVE",
+      "net_usd": 49226.43,
+      "longs_usd": 1778476.64,
+      "shorts_usd": 1729250.21,
+      "n_long": 3,
+      "n_short": 4,
+      "side": "LONG"
+    },
+    {
+      "coin": "ETHFI",
+      "net_usd": -49103.67,
+      "longs_usd": 1733.82,
+      "shorts_usd": 50837.49,
+      "n_long": 2,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "S",
+      "net_usd": 46076.74,
+      "longs_usd": 66959.13,
+      "shorts_usd": 20882.39,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "FET",
+      "net_usd": -40637.66,
+      "longs_usd": 206051.36,
+      "shorts_usd": 246689.03,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "RSR",
+      "net_usd": 39501.16,
+      "longs_usd": 39501.16,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "KAS",
+      "net_usd": -38803.61,
+      "longs_usd": 0.0,
+      "shorts_usd": 38803.61,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "CELO",
+      "net_usd": -38459.66,
+      "longs_usd": 0.0,
+      "shorts_usd": 38459.66,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
       "coin": "MOODENG",
-      "net_usd": 36754.74,
-      "longs_usd": 36754.74,
+      "net_usd": 36744.83,
+      "longs_usd": 36744.83,
       "shorts_usd": 0.0,
       "n_long": 3,
       "n_short": 0,
@@ -1223,206 +1196,116 @@
     },
     {
       "coin": "ORDI",
-      "net_usd": 35766.68,
-      "longs_usd": 36072.74,
-      "shorts_usd": 306.07,
+      "net_usd": 36188.24,
+      "longs_usd": 36488.15,
+      "shorts_usd": 299.92,
       "n_long": 1,
       "n_short": 1,
       "side": "LONG"
     },
     {
-      "coin": "CAKE",
-      "net_usd": -35172.94,
-      "longs_usd": 0.0,
-      "shorts_usd": 35172.94,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ANIME",
-      "net_usd": 33796.33,
-      "longs_usd": 34161.67,
-      "shorts_usd": 365.34,
-      "n_long": 1,
+      "coin": "SOPH",
+      "net_usd": 34474.57,
+      "longs_usd": 34584.83,
+      "shorts_usd": 110.26,
+      "n_long": 2,
       "n_short": 1,
       "side": "LONG"
     },
     {
-      "coin": "ZORA",
-      "net_usd": -33527.24,
-      "longs_usd": 0.91,
-      "shorts_usd": 33528.16,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "NOT",
-      "net_usd": -31139.83,
-      "longs_usd": 0.0,
-      "shorts_usd": 31139.83,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "BIO",
-      "net_usd": -30713.52,
-      "longs_usd": 0.0,
-      "shorts_usd": 30713.52,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "TNSR",
-      "net_usd": -28721.03,
-      "longs_usd": 0.0,
-      "shorts_usd": 28721.03,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "NXPC",
-      "net_usd": 23990.31,
-      "longs_usd": 23990.31,
+      "coin": "ACE",
+      "net_usd": 33524.73,
+      "longs_usd": 33524.73,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "BSV",
-      "net_usd": -20590.47,
+      "coin": "MOVE",
+      "net_usd": 32694.81,
+      "longs_usd": 32730.29,
+      "shorts_usd": 35.47,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "ANIME",
+      "net_usd": 30609.48,
+      "longs_usd": 30965.27,
+      "shorts_usd": 355.79,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "CHIP",
+      "net_usd": 29696.19,
+      "longs_usd": 29764.22,
+      "shorts_usd": 68.03,
+      "n_long": 2,
+      "n_short": 2,
+      "side": "LONG"
+    },
+    {
+      "coin": "NOT",
+      "net_usd": -28901.86,
       "longs_usd": 0.0,
-      "shorts_usd": 20590.47,
+      "shorts_usd": 28901.86,
       "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "IOTA",
+      "net_usd": -28475.06,
+      "longs_usd": 0.0,
+      "shorts_usd": 28475.06,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "TNSR",
+      "net_usd": -27945.61,
+      "longs_usd": 0.0,
+      "shorts_usd": 27945.61,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "MANTA",
+      "net_usd": 24857.76,
+      "longs_usd": 24857.76,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "ZORA",
+      "net_usd": -23918.46,
+      "longs_usd": 0.9,
+      "shorts_usd": 23919.35,
+      "n_long": 1,
       "n_short": 1,
       "side": "SHORT"
     },
     {
       "coin": "TURBO",
-      "net_usd": -20523.62,
-      "longs_usd": 0.77,
-      "shorts_usd": 20524.39,
+      "net_usd": -17963.25,
+      "longs_usd": 0.75,
+      "shorts_usd": 17964.0,
       "n_long": 1,
       "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "S",
-      "net_usd": -18602.88,
-      "longs_usd": 3268.51,
-      "shorts_usd": 21871.39,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "SUSHI",
-      "net_usd": 17298.03,
-      "longs_usd": 17298.03,
-      "shorts_usd": 0.0,
-      "n_long": 2,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "NEO",
-      "net_usd": -17177.78,
-      "longs_usd": 0.0,
-      "shorts_usd": 17177.78,
-      "n_long": 0,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "MANTA",
-      "net_usd": 15602.45,
-      "longs_usd": 15602.45,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "BABY",
-      "net_usd": 15588.74,
-      "longs_usd": 19653.39,
-      "shorts_usd": 4064.64,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "INIT",
-      "net_usd": 14226.68,
-      "longs_usd": 14226.68,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "GMT",
-      "net_usd": 13378.75,
-      "longs_usd": 13378.75,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "MEME",
-      "net_usd": 12278.23,
-      "longs_usd": 12278.23,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "IOTA",
-      "net_usd": -11827.28,
-      "longs_usd": 0.0,
-      "shorts_usd": 11827.28,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "UMA",
-      "net_usd": -10585.96,
-      "longs_usd": 0.0,
-      "shorts_usd": 10585.96,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "ETHFI",
-      "net_usd": 9765.62,
-      "longs_usd": 9765.62,
-      "shorts_usd": 0.0,
-      "n_long": 3,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "GOAT",
-      "net_usd": -9719.62,
-      "longs_usd": 3.56,
-      "shorts_usd": 9723.18,
-      "n_long": 1,
-      "n_short": 2,
-      "side": "SHORT"
-    },
-    {
-      "coin": "FOGO",
-      "net_usd": 8805.38,
-      "longs_usd": 8805.38,
+      "coin": "NXPC",
+      "net_usd": 16214.51,
+      "longs_usd": 16214.51,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
@@ -1430,161 +1313,170 @@
     },
     {
       "coin": "kFLOKI",
-      "net_usd": -8768.28,
-      "longs_usd": 15330.93,
-      "shorts_usd": 24099.21,
+      "net_usd": -16152.13,
+      "longs_usd": 6421.84,
+      "shorts_usd": 22573.97,
       "n_long": 1,
       "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "OP",
-      "net_usd": -7681.31,
-      "longs_usd": 3095.78,
-      "shorts_usd": 10777.09,
+      "coin": "SUSHI",
+      "net_usd": 15576.54,
+      "longs_usd": 15576.54,
+      "shorts_usd": 0.0,
+      "n_long": 2,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "INIT",
+      "net_usd": 15404.58,
+      "longs_usd": 15404.58,
+      "shorts_usd": 0.0,
       "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "ETC",
+      "net_usd": -13744.07,
+      "longs_usd": 139157.32,
+      "shorts_usd": 152901.39,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "GOAT",
+      "net_usd": -13031.37,
+      "longs_usd": 3.51,
+      "shorts_usd": 13034.88,
+      "n_long": 1,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "GMT",
+      "net_usd": 12758.49,
+      "longs_usd": 12758.49,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "CAKE",
+      "net_usd": -12195.86,
+      "longs_usd": 0.0,
+      "shorts_usd": 12195.86,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "BABY",
+      "net_usd": -11635.19,
+      "longs_usd": 0.0,
+      "shorts_usd": 11635.19,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "MEME",
+      "net_usd": 9221.51,
+      "longs_usd": 9221.51,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "UMA",
+      "net_usd": -8405.96,
+      "longs_usd": 0.0,
+      "shorts_usd": 8405.96,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "NEO",
+      "net_usd": -7985.76,
+      "longs_usd": 0.0,
+      "shorts_usd": 7985.76,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "BANANA",
+      "net_usd": -7862.45,
+      "longs_usd": 0.0,
+      "shorts_usd": 7862.45,
+      "n_long": 0,
       "n_short": 1,
       "side": "SHORT"
     },
     {
       "coin": "AIXBT",
-      "net_usd": -6490.26,
-      "longs_usd": 1998.72,
-      "shorts_usd": 8488.97,
-      "n_long": 1,
-      "n_short": 1,
+      "net_usd": -7200.4,
+      "longs_usd": 0.0,
+      "shorts_usd": 7200.4,
+      "n_long": 0,
+      "n_short": 2,
       "side": "SHORT"
     },
     {
-      "coin": "ALT",
-      "net_usd": 5751.6,
-      "longs_usd": 5751.6,
+      "coin": "0G",
+      "net_usd": 7001.31,
+      "longs_usd": 7001.31,
       "shorts_usd": 0.0,
-      "n_long": 1,
+      "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
       "coin": "GAS",
-      "net_usd": 5584.34,
-      "longs_usd": 5584.34,
+      "net_usd": 6937.23,
+      "longs_usd": 6937.23,
       "shorts_usd": 0.0,
       "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "BRETT",
+      "net_usd": 5074.65,
+      "longs_usd": 5074.65,
+      "shorts_usd": 0.0,
+      "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
       "coin": "PROVE",
-      "net_usd": 5164.76,
-      "longs_usd": 6177.55,
-      "shorts_usd": 1012.78,
+      "net_usd": 5026.64,
+      "longs_usd": 6113.23,
+      "shorts_usd": 1086.6,
       "n_long": 1,
       "n_short": 1,
       "side": "LONG"
-    },
-    {
-      "coin": "BRETT",
-      "net_usd": -5132.94,
-      "longs_usd": 50.4,
-      "shorts_usd": 5183.34,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "LAYER",
-      "net_usd": 4565.16,
-      "longs_usd": 4627.2,
-      "shorts_usd": 62.04,
-      "n_long": 2,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "kNEIRO",
-      "net_usd": -4086.55,
-      "longs_usd": 0.0,
-      "shorts_usd": 4086.55,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "PEOPLE",
-      "net_usd": -3909.43,
-      "longs_usd": 0.0,
-      "shorts_usd": 3909.43,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
     },
     {
       "coin": "ME",
-      "net_usd": 3342.51,
-      "longs_usd": 3342.51,
+      "net_usd": 4684.79,
+      "longs_usd": 4684.79,
       "shorts_usd": 0.0,
       "n_long": 2,
       "n_short": 0,
       "side": "LONG"
     },
     {
-      "coin": "kLUNC",
-      "net_usd": -2976.7,
-      "longs_usd": 8225.05,
-      "shorts_usd": 11201.74,
-      "n_long": 1,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "BANANA",
-      "net_usd": -2621.03,
-      "longs_usd": 0.0,
-      "shorts_usd": 2621.03,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "YGG",
-      "net_usd": 2389.48,
-      "longs_usd": 2389.48,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "WCT",
-      "net_usd": 1436.59,
-      "longs_usd": 1436.59,
-      "shorts_usd": 0.0,
-      "n_long": 1,
-      "n_short": 0,
-      "side": "LONG"
-    },
-    {
-      "coin": "CHIP",
-      "net_usd": 1155.12,
-      "longs_usd": 1170.5,
-      "shorts_usd": 15.39,
-      "n_long": 2,
-      "n_short": 1,
-      "side": "LONG"
-    },
-    {
-      "coin": "HYPER",
-      "net_usd": -770.26,
-      "longs_usd": 0.0,
-      "shorts_usd": 770.26,
-      "n_long": 0,
-      "n_short": 1,
-      "side": "SHORT"
-    },
-    {
-      "coin": "POLYX",
-      "net_usd": 708.35,
-      "longs_usd": 708.35,
+      "coin": "PEOPLE",
+      "net_usd": 4638.2,
+      "longs_usd": 4638.2,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
@@ -1592,150 +1484,383 @@
     },
     {
       "coin": "BIGTIME",
-      "net_usd": 587.83,
-      "longs_usd": 587.83,
+      "net_usd": -4093.99,
+      "longs_usd": 0.0,
+      "shorts_usd": 4093.99,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "WCT",
+      "net_usd": -3801.06,
+      "longs_usd": 0.0,
+      "shorts_usd": 3801.06,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "ALT",
+      "net_usd": 3735.09,
+      "longs_usd": 3735.09,
       "shorts_usd": 0.0,
       "n_long": 1,
       "n_short": 0,
       "side": "LONG"
+    },
+    {
+      "coin": "FOGO",
+      "net_usd": -2647.68,
+      "longs_usd": 0.0,
+      "shorts_usd": 2647.68,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "IO",
+      "net_usd": -2043.67,
+      "longs_usd": 0.0,
+      "shorts_usd": 2043.67,
+      "n_long": 0,
+      "n_short": 2,
+      "side": "SHORT"
+    },
+    {
+      "coin": "YGG",
+      "net_usd": 1895.85,
+      "longs_usd": 1895.85,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "BSV",
+      "net_usd": -1760.13,
+      "longs_usd": 0.0,
+      "shorts_usd": 1760.13,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "BIO",
+      "net_usd": 1461.87,
+      "longs_usd": 1461.87,
+      "shorts_usd": 0.0,
+      "n_long": 2,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "LAYER",
+      "net_usd": 1415.79,
+      "longs_usd": 1476.03,
+      "shorts_usd": 60.24,
+      "n_long": 2,
+      "n_short": 1,
+      "side": "LONG"
+    },
+    {
+      "coin": "POLYX",
+      "net_usd": 1015.65,
+      "longs_usd": 1015.65,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "kNEIRO",
+      "net_usd": 1007.41,
+      "longs_usd": 1007.41,
+      "shorts_usd": 0.0,
+      "n_long": 1,
+      "n_short": 0,
+      "side": "LONG"
+    },
+    {
+      "coin": "kLUNC",
+      "net_usd": -442.78,
+      "longs_usd": 8078.97,
+      "shorts_usd": 8521.74,
+      "n_long": 1,
+      "n_short": 1,
+      "side": "SHORT"
+    },
+    {
+      "coin": "HYPER",
+      "net_usd": -307.63,
+      "longs_usd": 0.0,
+      "shorts_usd": 307.63,
+      "n_long": 0,
+      "n_short": 1,
+      "side": "SHORT"
     }
   ],
   "signals": [
     {
-      "coin": "ETH",
-      "side": "SHORT",
-      "net_usd": -55290095.55,
-      "longs_usd": 47101411.73,
-      "shorts_usd": 102391507.28,
-      "n_long": 9,
-      "n_short": 11
-    },
-    {
       "coin": "BTC",
       "side": "SHORT",
-      "net_usd": -33906371.47,
-      "longs_usd": 65408406.22,
-      "shorts_usd": 99314777.69,
+      "net_usd": -76031803.51,
+      "longs_usd": 58695315.88,
+      "shorts_usd": 134727119.4,
       "n_long": 10,
+      "n_short": 10
+    },
+    {
+      "coin": "ETH",
+      "side": "SHORT",
+      "net_usd": -50463230.29,
+      "longs_usd": 45186911.78,
+      "shorts_usd": 95650142.07,
+      "n_long": 8,
       "n_short": 11
     },
     {
       "coin": "SOL",
       "side": "SHORT",
-      "net_usd": -30572289.58,
-      "longs_usd": 1089572.23,
-      "shorts_usd": 31661861.81,
-      "n_long": 5,
-      "n_short": 11
-    },
-    {
-      "coin": "LIT",
-      "side": "SHORT",
-      "net_usd": -15225518.27,
-      "longs_usd": 730048.3,
-      "shorts_usd": 15955566.57,
-      "n_long": 5,
-      "n_short": 6
+      "net_usd": -37401013.5,
+      "longs_usd": 4869850.03,
+      "shorts_usd": 42270863.52,
+      "n_long": 7,
+      "n_short": 8
     },
     {
       "coin": "ZEC",
       "side": "SHORT",
-      "net_usd": -13348169.51,
-      "longs_usd": 9639501.72,
-      "shorts_usd": 22987671.23,
+      "net_usd": -15338199.89,
+      "longs_usd": 5483891.39,
+      "shorts_usd": 20822091.28,
       "n_long": 4,
-      "n_short": 10
+      "n_short": 12
     },
     {
-      "coin": "HYPE",
-      "side": "SHORT",
-      "net_usd": -8683696.34,
-      "longs_usd": 13045969.86,
-      "shorts_usd": 21729666.2,
-      "n_long": 6,
-      "n_short": 13
-    },
-    {
-      "coin": "NEAR",
-      "side": "SHORT",
-      "net_usd": -8407345.41,
-      "longs_usd": 2153513.42,
-      "shorts_usd": 10560858.83,
-      "n_long": 9,
-      "n_short": 5
+      "coin": "XRP",
+      "side": "LONG",
+      "net_usd": 6025033.84,
+      "longs_usd": 12800085.67,
+      "shorts_usd": 6775051.83,
+      "n_long": 4,
+      "n_short": 8
     },
     {
       "coin": "DOGE",
       "side": "SHORT",
-      "net_usd": -5585426.67,
-      "longs_usd": 300753.26,
-      "shorts_usd": 5886179.93,
+      "net_usd": -5229195.17,
+      "longs_usd": 205094.02,
+      "shorts_usd": 5434289.18,
       "n_long": 3,
       "n_short": 6
+    },
+    {
+      "coin": "LIT",
+      "side": "SHORT",
+      "net_usd": -4923197.19,
+      "longs_usd": 1483585.2,
+      "shorts_usd": 6406782.39,
+      "n_long": 7,
+      "n_short": 3
+    },
+    {
+      "coin": "NEAR",
+      "side": "SHORT",
+      "net_usd": -4817928.54,
+      "longs_usd": 2874856.52,
+      "shorts_usd": 7692785.07,
+      "n_long": 8,
+      "n_short": 5
     },
     {
       "coin": "WLD",
       "side": "SHORT",
-      "net_usd": -4327655.32,
-      "longs_usd": 549658.54,
-      "shorts_usd": 4877313.86,
-      "n_long": 3,
-      "n_short": 6
-    },
-    {
-      "coin": "PONS",
-      "side": "SHORT",
-      "net_usd": -3964540.6,
-      "longs_usd": 4902.83,
-      "shorts_usd": 3969443.43,
-      "n_long": 1,
-      "n_short": 6
-    },
-    {
-      "coin": "ONDO",
-      "side": "SHORT",
-      "net_usd": -2610993.12,
-      "longs_usd": 452949.2,
-      "shorts_usd": 3063942.33,
-      "n_long": 3,
+      "net_usd": -4051325.03,
+      "longs_usd": 721056.11,
+      "shorts_usd": 4772381.13,
+      "n_long": 4,
       "n_short": 6
     },
     {
       "coin": "CASHCAT",
       "side": "SHORT",
-      "net_usd": -2470072.13,
-      "longs_usd": 273219.01,
-      "shorts_usd": 2743291.15,
+      "net_usd": -2902984.22,
+      "longs_usd": 276844.21,
+      "shorts_usd": 3179828.43,
       "n_long": 1,
       "n_short": 3
     },
     {
       "coin": "kPEPE",
       "side": "SHORT",
-      "net_usd": -2352433.72,
-      "longs_usd": 721589.17,
-      "shorts_usd": 3074022.89,
-      "n_long": 5,
-      "n_short": 2
+      "net_usd": -2712344.5,
+      "longs_usd": 423127.31,
+      "shorts_usd": 3135471.81,
+      "n_long": 4,
+      "n_short": 3
+    },
+    {
+      "coin": "PONS",
+      "side": "SHORT",
+      "net_usd": -2598369.04,
+      "longs_usd": 59634.87,
+      "shorts_usd": 2658003.92,
+      "n_long": 3,
+      "n_short": 4
     },
     {
       "coin": "TAO",
       "side": "SHORT",
-      "net_usd": -2288908.34,
-      "longs_usd": 290110.78,
-      "shorts_usd": 2579019.12,
-      "n_long": 4,
-      "n_short": 5
-    },
-    {
-      "coin": "PUMP",
-      "side": "SHORT",
-      "net_usd": -2243769.5,
-      "longs_usd": 4845512.06,
-      "shorts_usd": 7089281.56,
-      "n_long": 6,
-      "n_short": 3
+      "net_usd": -2342271.7,
+      "longs_usd": 287279.31,
+      "shorts_usd": 2629551.01,
+      "n_long": 5,
+      "n_short": 4
     }
   ],
-  "errors": []
+  "errors": [],
+  "delta": {
+    "prev_generated_at": "2026-10-14 22:47",
+    "now_generated_at": "2026-10-15 12:48",
+    "hours_elapsed": 14.0,
+    "total_value_delta_usd": -24744187.35,
+    "items": [
+      {
+        "coin": "BTC",
+        "prev_net_usd": -33906371.47,
+        "now_net_usd": -76031803.51,
+        "delta_usd": -42125432.04,
+        "action": "加空",
+        "n_long": 10,
+        "n_short": 10
+      },
+      {
+        "coin": "LIT",
+        "prev_net_usd": -15225518.27,
+        "now_net_usd": -4923197.19,
+        "delta_usd": 10302321.08,
+        "action": "回补(减空)",
+        "n_long": 7,
+        "n_short": 3
+      },
+      {
+        "coin": "HYPE",
+        "prev_net_usd": -8683696.34,
+        "now_net_usd": 269456.44,
+        "delta_usd": 8953152.78,
+        "action": "翻多",
+        "n_long": 7,
+        "n_short": 11
+      },
+      {
+        "coin": "XRP",
+        "prev_net_usd": -884528.2,
+        "now_net_usd": 6025033.84,
+        "delta_usd": 6909562.04,
+        "action": "翻多",
+        "n_long": 4,
+        "n_short": 8
+      },
+      {
+        "coin": "SOL",
+        "prev_net_usd": -30572289.58,
+        "now_net_usd": -37401013.5,
+        "delta_usd": -6828723.92,
+        "action": "加空",
+        "n_long": 7,
+        "n_short": 8
+      },
+      {
+        "coin": "ETH",
+        "prev_net_usd": -55290095.55,
+        "now_net_usd": -50463230.29,
+        "delta_usd": 4826865.26,
+        "action": "回补(减空)",
+        "n_long": 8,
+        "n_short": 11
+      },
+      {
+        "coin": "NEAR",
+        "prev_net_usd": -8407345.41,
+        "now_net_usd": -4817928.54,
+        "delta_usd": 3589416.87,
+        "action": "回补(减空)",
+        "n_long": 8,
+        "n_short": 5
+      },
+      {
+        "coin": "ZEC",
+        "prev_net_usd": -13348169.51,
+        "now_net_usd": -15338199.89,
+        "delta_usd": -1990030.38,
+        "action": "加空",
+        "n_long": 4,
+        "n_short": 12
+      },
+      {
+        "coin": "PONS",
+        "prev_net_usd": -3964540.6,
+        "now_net_usd": -2598369.04,
+        "delta_usd": 1366171.56,
+        "action": "回补(减空)",
+        "n_long": 3,
+        "n_short": 4
+      },
+      {
+        "coin": "MON",
+        "prev_net_usd": -1321526.08,
+        "now_net_usd": -407154.1,
+        "delta_usd": 914371.98,
+        "action": "回补(减空)",
+        "n_long": 2,
+        "n_short": 5
+      },
+      {
+        "coin": "PUMP",
+        "prev_net_usd": -2243769.5,
+        "now_net_usd": -1353364.74,
+        "delta_usd": 890404.76,
+        "action": "回补(减空)",
+        "n_long": 7,
+        "n_short": 3
+      },
+      {
+        "coin": "JUP",
+        "prev_net_usd": -419298.48,
+        "now_net_usd": 207268.09,
+        "delta_usd": 626566.57,
+        "action": "翻多",
+        "n_long": 2,
+        "n_short": 2
+      },
+      {
+        "coin": "ONDO",
+        "prev_net_usd": -2610993.12,
+        "now_net_usd": -1989534.5,
+        "delta_usd": 621458.62,
+        "action": "回补(减空)",
+        "n_long": 5,
+        "n_short": 5
+      },
+      {
+        "coin": "AAVE",
+        "prev_net_usd": -564217.0,
+        "now_net_usd": 49226.43,
+        "delta_usd": 613443.43,
+        "action": "翻多",
+        "n_long": 3,
+        "n_short": 4
+      },
+      {
+        "coin": "GRASS",
+        "prev_net_usd": -370259.46,
+        "now_net_usd": 159192.0,
+        "delta_usd": 529451.46,
+        "action": "翻多",
+        "n_long": 2,
+        "n_short": 2
+      }
+    ]
+  }
 }
